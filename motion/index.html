@@ -26,6 +26,7 @@
   .card p { margin: .4rem 0; font-size: .92rem; color: #c6cbd4; }
   .card .command-row { display: flex; align-items: stretch; gap: .4rem; margin-top: .35rem; }
   .card code { display: block; flex: 1 1 auto; min-width: 0; background: #0d0f13; border: 1px solid #2a2e38; border-radius: 5px; padding: .15rem .5rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .8rem; line-height: 1.55; color: #a8e6a1; margin-top: 0; letter-spacing: 0; font-variant-ligatures: none; font-kerning: none; white-space: pre-wrap; overflow-wrap: normal; overflow-x: auto; vertical-align: top; }
+  .command-token { display: inline-block; white-space: nowrap; }
   @media (max-width: 520px) { .card .command-row { flex-direction: column; gap: .35rem; } .copy-command { align-self: flex-end; } }
   .copy-command { flex: 0 0 auto; min-height: 2rem; padding: .15rem .5rem; border: 1px solid #39414d; border-radius: 5px; background: #20242d; color: #d7dbe2; font: inherit; font-size: .75rem; cursor: pointer; }
   .copy-command:hover, .copy-command:focus-visible { border-color: #7db4ff; color: #fff; }
@@ -236,6 +237,18 @@
   </footer>
 </main>
 <script>
+  document.querySelectorAll(".command-row code").forEach((code) => {
+    const command = code.textContent;
+    const parts = command.match(/\s+|\S+/g) || [];
+    code.replaceChildren(...parts.map((part) => {
+      if (/^\s+$/.test(part)) return document.createTextNode(part);
+      const token = document.createElement("span");
+      token.className = "command-token";
+      token.textContent = part;
+      return token;
+    }));
+  });
+
   document.addEventListener("click", async (event) => {
     const button = event.target.closest(".copy-command");
     if (!button) return;
