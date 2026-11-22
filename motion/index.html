@@ -71,61 +71,80 @@
   </div>
 
   <h2>Animation &amp; 3D libraries</h2>
+  <p class="note">"With an agent" lines link to a real, public skill package or MCP server that teaches an agent to drive that tool.</p>
   <div class="grid">
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://motion.dev">Motion</a></h3>
       <p>Spring motion and screen transitions for React and JavaScript (formerly Framer Motion). The default choice for UI animation in React.</p>
+      <p>With an agent: <a href="https://motion.dev/ai-kit">Motion AI Kit</a>, the official skill, MCP and docs pack from the Motion team.</p>
+      <code>npx motion-ai</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://gsap.com">GSAP</a></h3>
       <p>Timeline-based animation for the web. Precise sequencing of many elements, scroll triggers, SVG morphing.</p>
+      <p>With an agent: <a href="https://github.com/greensock/gsap-skills">GSAP Skills</a>, GreenSock's official skill set for coding agents.</p>
+      <code>npx skills add greensock/gsap-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://threejs.org">Three.js</a></h3>
       <p>3D scenes and cameras in the browser. The base layer for WebGL content; pairs with react-three-fiber in React.</p>
+      <p>With an agent: <a href="https://github.com/CloudAI-X/threejs-skills">threejs-skills</a>, 13 skills teaching current three.js, WebGPU/TSL and react-three-fiber.</p>
+      <code>npx skills add cloudai-x/threejs-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/pmndrs/react-three-rapier">react-three-rapier</a></h3>
       <p>Rapier physics in 3D React scenes: collisions, gravity, ragdolls. MIT.</p>
+      <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> includes r3f-physics, a Rapier bodies-and-colliders skill.</p>
+      <code>npx skills add EnzeD/r3f-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/pmndrs/react-postprocessing">react-postprocessing</a></h3>
       <p>Cinematic post effects for react-three-fiber: bloom, blur, depth of field, vignette.</p>
+      <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> includes r3f-postprocessing, for composer pipelines and screen effects.</p>
+      <code>npx skills add EnzeD/r3f-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/Alchemist0823/three.quarks">three.quarks</a></h3>
       <p>Particle effects for three.js: fire, smoke, explosions, magic. Batched rendering, Unity-Shuriken-style features. MIT. <a href="https://quarks.art">quarks.art</a></p>
+      <p class="meta">No free public agent skill found yet.</p>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/cocopon/tweakpane">Tweakpane</a></h3>
       <p>Compact pane to adjust parameters live while developing a scene or animation.</p>
+      <p class="meta">No free public agent skill found yet.</p>
     </div>
     <div class="card">
       <span class="tag tool">desktop tool</span>
       <h3><a href="https://www.blender.org">Blender</a></h3>
       <p>Free and open source 3D suite: rigging and character animation, modeling, rendering. Export glTF for the web.</p>
+      <p>With an agent: <a href="https://github.com/ahujasid/mcp-for-blender">Blender MCP</a>, a community MCP server that lets an agent control Blender directly.</p>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://www.manim.community">Manim</a></h3>
       <p>Programmatic animation of diagrams, formulas and explainers, the style known from math channels. Python.</p>
+      <p>With an agent: <a href="https://github.com/vumichien/manim-skill">manim-skill</a>, an agent pipeline that turns ideas and math into Manim scenes. Apache-2.0.</p>
+      <code>npx skills add vumichien/manim-skill</code>
     </div>
     <div class="card">
       <span class="tag lib">library / format</span>
       <h3><a href="https://lottiefiles.com">Lottie</a></h3>
       <p>Lightweight vector animations exported from After Effects, played on web and mobile. Huge free library at LottieFiles.</p>
+      <p>With an agent: LottieFiles' official agent guide, <a href="https://creator.lottiefiles.com/agents.md">creator.lottiefiles.com/agents.md</a>, covers driving Lottie Creator from an agent, including its official MCP server.</p>
     </div>
     <div class="card">
       <span class="tag lib">library / engine</span>
       <h3><a href="https://www.remotion.dev">Remotion</a></h3>
       <p>Video engine in React: compositions, sequences, rendering to MP4. The foundation the Remotion skills teach agents to drive.</p>
+      <p>With an agent: the official <a href="https://github.com/remotion-dev/skills">Remotion Skills</a> listed above.</p>
+      <code>npx skills add remotion-dev/skills</code>
     </div>
   </div>
 
@@ -135,21 +154,27 @@
       <span class="tag tool">API</span>
       <h3><a href="https://api.openverse.org/v1/">Openverse API</a></h3>
       <p>Search openly licensed audio (SFX, music) and images. Free anonymous use; optional OAuth registration raises rate limits. Every asset carries its own license, so check the license and attribution requirements on each result before using it. <a href="https://docs.openverse.org">Docs</a>.</p>
+      <p>With an agent: <a href="https://github.com/neno-is-ooo/mcp-openverse">mcp-openverse</a>, a community MCP server for searching Openverse from an agent.</p>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://librosa.org">librosa</a></h3>
       <p>Python audio analysis: beat tracking and tempo detection to sync cuts and movement to music.</p>
+      <p>With an agent: <a href="https://github.com/hugohow/mcp-music-analysis">mcp-music-analysis</a>, a community MCP server that runs librosa analysis for an agent.</p>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/m-bain/whisperX">WhisperX</a></h3>
       <p>Automatic subtitles with word-level timestamps and speaker diarization, fast batched inference. BSD-2-Clause.</p>
+      <p>With an agent: <a href="https://github.com/abubakarsiddik31/whisperx-transcribe">whisperx-transcribe</a>, a skill that runs WhisperX and returns a speaker-labeled Markdown transcript.</p>
+      <code>npx skills add abubakarsiddik31/whisperx-transcribe</code>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://www.ffmpeg.org">FFmpeg</a></h3>
       <p>Export and conversion for everything: codecs, trimming, muxing audio and subtitles, thumbnails.</p>
+      <p>With an agent: <a href="https://github.com/muhammaddadu/ffmpeg-skill">ffmpeg-skill</a>, vetted FFmpeg recipes plus a full production pipeline.</p>
+      <code>npx skills add muhammaddadu/ffmpeg-skill</code>
     </div>
   </div>
 
@@ -164,7 +189,7 @@
   </ol>
 
   <footer>
-    Every name on this page was checked against its official source on 2026-11-23. Entries marked as agent skills are public skill packages; the rest are libraries, APIs or tools. License notes are included only where verified. Part of <a href="https://vanipy.com">vanipy.com</a>.
+    Every name on this page was checked against its official source on 2026-11-23. Entries marked as agent skills are public skill packages; "with an agent" links are public skills or MCP servers for that tool; the rest are libraries, APIs or tools. License notes are included only where verified. Part of <a href="https://vanipy.com">vanipy.com</a>.
   </footer>
 </main>
 </body>
