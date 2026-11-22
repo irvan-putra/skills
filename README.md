@@ -2,6 +2,6 @@
 
 Collections of agent skills and tools we use, published with GitHub Pages.
 
-- [Motion & content creation](https://vanipy.com/skills/motion/) — motion-design agent skills, animation/3D libraries, and the video production pipeline (audio, beat sync, subtitles, export).
+- [Motion & content creation](https://vanipy.com/skills/motion/): motion-design agent skills, animation/3D libraries, and the video production pipeline (audio, beat sync, subtitles, export).
 
 Each entry links to its official source; entries are re-verified when the page changes.
