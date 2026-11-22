@@ -25,8 +25,7 @@
   .tag.tool { background: #3a2f14; color: #e3c573; }
   .card p { margin: .4rem 0; font-size: .92rem; color: #c6cbd4; }
   .card .command-row { display: flex; align-items: stretch; gap: .4rem; margin-top: .35rem; }
-  .card code { display: block; flex: 1 1 auto; min-width: 0; background: #0d0f13; border: 1px solid #2a2e38; border-radius: 5px; padding: .15rem .5rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .8rem; line-height: 1.55; color: #a8e6a1; margin-top: 0; letter-spacing: 0; font-variant-ligatures: none; font-kerning: none; overflow-wrap: anywhere; }
-  .card code.multiline-command { white-space: pre-wrap; vertical-align: top; }
+  .card code { display: block; flex: 1 1 auto; min-width: 0; background: #0d0f13; border: 1px solid #2a2e38; border-radius: 5px; padding: .15rem .5rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .8rem; line-height: 1.55; color: #a8e6a1; margin-top: 0; letter-spacing: 0; font-variant-ligatures: none; font-kerning: none; white-space: pre-wrap; overflow-wrap: normal; overflow-x: auto; vertical-align: top; }
   @media (max-width: 520px) { .card .command-row { flex-direction: column; gap: .35rem; } .copy-command { align-self: flex-end; } }
   .copy-command { flex: 0 0 auto; min-height: 2rem; padding: .15rem .5rem; border: 1px solid #39414d; border-radius: 5px; background: #20242d; color: #d7dbe2; font: inherit; font-size: .75rem; cursor: pointer; }
   .copy-command:hover, .copy-command:focus-visible { border-color: #7db4ff; color: #fff; }
@@ -119,8 +118,7 @@
       <h3><a href="https://github.com/Alchemist0823/three.quarks">three.quarks</a></h3>
       <p>Particle effects for three.js: fire, smoke, explosions, magic. MIT. <a href="https://quarks.art">quarks.art</a></p>
       <p>With an agent: the MIT repo ships docs and live examples an agent can follow directly; <a href="https://github.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills">Threejs Awesome Graphics Agent Skills</a> (MIT) adds a broader procedural-vfx pack.</p>
-      <div class="command-row"><code class="multiline-command">npx threejs-awesome-graphics-agent-skills@latest install\
---agent claude-code</code><button class="copy-command" type="button" data-command="npx threejs-awesome-graphics-agent-skills@latest install --agent claude-code" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>npx threejs-awesome-graphics-agent-skills@latest install --agent claude-code</code><button class="copy-command" type="button" data-command="npx threejs-awesome-graphics-agent-skills@latest install --agent claude-code" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
@@ -173,9 +171,7 @@
       <h3 id="mcp-music-analysis"><a href="https://github.com/librosa/librosa">librosa</a></h3>
       <p>Python audio analysis: beat tracking and tempo detection to sync cuts and movement to music. <a href="https://librosa.org">librosa.org</a></p>
       <p>With an agent: <a href="https://github.com/hugohow/mcp-music-analysis">mcp-music-analysis</a>, a community MCP server that runs librosa analysis.</p>
-      <div class="command-row"><code class="multiline-command">npx -y @smithery/cli install \
-@hugohow/mcp-music-analysis \
---client claude</code><button class="copy-command" type="button" data-command="npx -y @smithery/cli install @hugohow/mcp-music-analysis --client claude" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>npx -y @smithery/cli install @hugohow/mcp-music-analysis --client claude</code><button class="copy-command" type="button" data-command="npx -y @smithery/cli install @hugohow/mcp-music-analysis --client claude" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
