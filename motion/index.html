@@ -24,7 +24,11 @@
   .tag.lib { background: #1e3a2a; color: #8fd9a8; }
   .tag.tool { background: #3a2f14; color: #e3c573; }
   .card p { margin: .4rem 0; font-size: .92rem; color: #c6cbd4; }
-  .card code { display: inline-block; background: #0d0f13; border: 1px solid #2a2e38; border-radius: 5px; padding: .15rem .5rem; font-size: .8rem; color: #a8e6a1; margin-top: .35rem; }
+  .card .command-row { display: flex; align-items: flex-start; gap: .4rem; margin-top: .35rem; }
+  .card code { display: block; flex: 1 1 auto; min-width: 0; background: #0d0f13; border: 1px solid #2a2e38; border-radius: 5px; padding: .15rem .5rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: .8rem; line-height: 1.55; color: #a8e6a1; margin-top: 0; letter-spacing: 0; font-variant-ligatures: none; font-kerning: none; overflow-wrap: anywhere; }
+  .card code.multiline-command { white-space: pre-wrap; vertical-align: top; }
+  .copy-command { flex: 0 0 auto; min-height: 2rem; padding: .2rem .5rem; border: 1px solid #39414d; border-radius: 5px; background: #20242d; color: #d7dbe2; font: inherit; font-size: .75rem; cursor: pointer; }
+  .copy-command:hover, .copy-command:focus-visible { border-color: #7db4ff; color: #fff; }
   .meta { font-size: .8rem; color: #7d8490; }
   ol.pipeline { color: #c6cbd4; }
   ol.pipeline li { margin: .3rem 0; }
@@ -43,31 +47,31 @@
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/LottieFiles/motion-design-skill">motion-design-skill</a></h3>
       <p>Motion design principles for agents: timing, easing, choreography, Disney's 12 principles adapted for UI. Works with CSS, Motion, GSAP, Lottie, springs. MIT.</p>
-      <code>npx skills add LottieFiles/motion-design-skill</code>
+      <div class="command-row"><code>npx skills add LottieFiles/motion-design-skill</code><button class="copy-command" type="button" data-command="npx skills add LottieFiles/motion-design-skill" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/remotion-dev/skills">Remotion Skills</a></h3>
       <p>Remotion's official skill set (14 skills) for creating, previewing and rendering videos. <a href="https://www.skills.sh/remotion-dev">Listings</a>.</p>
-      <code>npx skills add remotion-dev/skills</code>
+      <div class="command-row"><code>npx skills add remotion-dev/skills</code><button class="copy-command" type="button" data-command="npx skills add remotion-dev/skills" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/lucasmarkes/hairline">hairline</a></h3>
       <p>Isometric line art that reacts to the pointer. <b>hairline-create</b> draws a figure from an idea; <b>hairline-adopt</b> rebuilds an existing SVG. Output is a single HTML file. MIT. <a href="https://hairline.lucasmarkes.com/skills">Docs</a>.</p>
-      <code>npx skills add lucasmarkes/hairline</code>
+      <div class="command-row"><code>npx skills add lucasmarkes/hairline</code><button class="copy-command" type="button" data-command="npx skills add lucasmarkes/hairline" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/wheresryan22/anatomy">anatomy</a></h3>
       <p>Interactive isometric SVG diagrams that explain a technical idea as a real physical object or machine, with optional WebGL shaders and a beta true-3D mode. <a href="https://skills.wheresryan.sh/anatomy">Author's page</a>.</p>
-      <code>npx skills add wheresryan22/anatomy</code>
+      <div class="command-row"><code>npx skills add wheresryan22/anatomy</code><button class="copy-command" type="button" data-command="npx skills add wheresryan22/anatomy" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/annnguyentt/anatomy-reveal-skill">anatomy-reveal</a></h3>
       <p>Builds an object as a many-part isometric figure, then produces an exploded-view reveal film and an interactive dissection page. Works from a photo or a name. MIT. <a href="https://typingmind.com/skills/annnguyentt-anatomy-reveal">TypingMind listing</a>.</p>
-      <code>npx skills add annnguyentt/anatomy-reveal-skill</code>
+      <div class="command-row"><code>npx skills add annnguyentt/anatomy-reveal-skill</code><button class="copy-command" type="button" data-command="npx skills add annnguyentt/anatomy-reveal-skill" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -79,77 +83,78 @@
       <h3><a href="https://github.com/motiondivision/motion">Motion</a></h3>
       <p>Spring motion and screen transitions for React and JavaScript (formerly Framer Motion). <a href="https://motion.dev">motion.dev</a></p>
       <p>With an agent: <a href="https://motion.dev/ai-kit">Motion AI Kit</a>, the official skill + MCP server from the Motion team.</p>
-      <code>npx motion-ai</code>
+      <div class="command-row"><code>npx motion-ai</code><button class="copy-command" type="button" data-command="npx motion-ai" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/greensock/GSAP">GSAP</a></h3>
       <p>Timeline-based animation for the web: precise sequencing, scroll triggers, SVG morphing. <a href="https://gsap.com">gsap.com</a></p>
       <p>With an agent: <a href="https://github.com/greensock/gsap-skills">GSAP Skills</a>, GreenSock's official skill set.</p>
-      <code>npx skills add greensock/gsap-skills</code>
+      <div class="command-row"><code>npx skills add greensock/gsap-skills</code><button class="copy-command" type="button" data-command="npx skills add greensock/gsap-skills" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/mrdoob/three.js">Three.js</a></h3>
       <p>3D scenes and cameras in the browser; the base layer for WebGL content, pairs with react-three-fiber. <a href="https://threejs.org">threejs.org</a></p>
       <p>With an agent: <a href="https://github.com/CloudAI-X/threejs-skills">threejs-skills</a>, 13 packs covering current three.js, WebGPU/TSL and react-three-fiber.</p>
-      <code>npx skills add cloudai-x/threejs-skills</code>
+      <div class="command-row"><code>npx skills add cloudai-x/threejs-skills</code><button class="copy-command" type="button" data-command="npx skills add cloudai-x/threejs-skills" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/pmndrs/react-three-rapier">react-three-rapier</a></h3>
       <p>Rapier physics in 3D React scenes: collisions, gravity, ragdolls. MIT.</p>
       <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> includes r3f-physics, a Rapier bodies-and-colliders pack.</p>
-      <code>npx skills add EnzeD/r3f-skills</code>
+      <div class="command-row"><code>npx skills add EnzeD/r3f-skills</code><button class="copy-command" type="button" data-command="npx skills add EnzeD/r3f-skills" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/pmndrs/react-postprocessing">react-postprocessing</a></h3>
       <p>Cinematic post effects for react-three-fiber: bloom, blur, depth of field, vignette.</p>
       <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> includes r3f-postprocessing, for composer pipelines and screen effects.</p>
-      <code>npx skills add EnzeD/r3f-skills</code>
+      <div class="command-row"><code>npx skills add EnzeD/r3f-skills</code><button class="copy-command" type="button" data-command="npx skills add EnzeD/r3f-skills" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/Alchemist0823/three.quarks">three.quarks</a></h3>
       <p>Particle effects for three.js: fire, smoke, explosions, magic. MIT. <a href="https://quarks.art">quarks.art</a></p>
       <p>With an agent: the MIT repo ships docs and live examples an agent can follow directly; <a href="https://github.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills">Threejs Awesome Graphics Agent Skills</a> (MIT) adds a broader procedural-vfx pack.</p>
-      <code>npx threejs-awesome-graphics-agent-skills@latest install --agent claude-code</code>
+      <div class="command-row"><code class="multiline-command">npx threejs-awesome-graphics-agent-skills@latest install \
+--agent claude-code</code><button class="copy-command" type="button" data-command="npx threejs-awesome-graphics-agent-skills@latest install --agent claude-code" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/cocopon/tweakpane">Tweakpane</a></h3>
       <p>Compact pane to adjust parameters live while developing a scene or animation. MIT.</p>
       <p>With an agent: the <a href="https://tweakpane.github.io/docs/">docs</a> are short enough to read cold; <a href="https://github.com/petekp/agent-skills">tuning-panel</a> builds a Tweakpane, Leva or dat.GUI panel and exports the tuned values (no license file).</p>
-      <code>npx add-skill petekp/agent-skills</code>
+      <div class="command-row"><code>npx add-skill petekp/agent-skills</code><button class="copy-command" type="button" data-command="npx add-skill petekp/agent-skills" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">desktop tool</span>
       <h3><a href="https://github.com/blender/blender">Blender</a></h3>
       <p>Free, open source 3D suite: modeling, rigging, animation, rendering. Exports glTF for the web. <a href="https://www.blender.org">blender.org</a></p>
       <p>With an agent: <a href="https://github.com/ahujasid/mcp-for-blender">Blender MCP</a>, a community MCP server that lets an agent control Blender directly.</p>
-      <code>uvx mcp-for-blender setup</code>
+      <div class="command-row"><code>uvx mcp-for-blender setup</code><button class="copy-command" type="button" data-command="uvx mcp-for-blender setup" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/ManimCommunity/manim">Manim</a></h3>
       <p>Programmatic animation of diagrams, formulas and explainers, the style known from math channels. Python. <a href="https://www.manim.community">manim.community</a></p>
       <p>With an agent: <a href="https://github.com/vumichien/manim-skill">manim-skill</a>, an agent pipeline that turns ideas and math into Manim scenes. Apache-2.0.</p>
-      <code>npx skills add vumichien/manim-skill</code>
+      <div class="command-row"><code>npx skills add vumichien/manim-skill</code><button class="copy-command" type="button" data-command="npx skills add vumichien/manim-skill" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library / format</span>
       <h3><a href="https://github.com/airbnb/lottie-web">Lottie</a></h3>
       <p>Lightweight vector animations exported from After Effects, played on web and mobile by lottie-web. Huge free library at <a href="https://lottiefiles.com">LottieFiles</a>.</p>
       <p>With an agent: LottieFiles' official <a href="https://creator.lottiefiles.com/agents.md">agent guide + MCP server</a> for driving Lottie Creator.</p>
-      <code>npx -y @lottiefiles/creator-mcp@latest</code>
+      <div class="command-row"><code>npx -y @lottiefiles/creator-mcp@latest</code><button class="copy-command" type="button" data-command="npx -y @lottiefiles/creator-mcp@latest" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library / engine</span>
       <h3><a href="https://github.com/remotion-dev/remotion">Remotion</a></h3>
       <p>Video engine in React: compositions, sequences, rendering to MP4. <a href="https://www.remotion.dev">remotion.dev</a></p>
       <p>With an agent: the official <a href="https://github.com/remotion-dev/skills">Remotion Skills</a> listed above.</p>
-      <code>npx skills add remotion-dev/skills</code>
+      <div class="command-row"><code>npx skills add remotion-dev/skills</code><button class="copy-command" type="button" data-command="npx skills add remotion-dev/skills" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -160,28 +165,29 @@
       <h3><a href="https://api.openverse.org/v1/">Openverse API</a></h3>
       <p>Search openly licensed audio (SFX, music) and images. Free anonymous use; optional OAuth registration raises rate limits. Check each result's own license and attribution requirements. <a href="https://docs.openverse.org">Docs</a>.</p>
       <p>With an agent: <a href="https://github.com/neno-is-ooo/mcp-openverse">mcp-openverse</a>, a community MCP server for searching Openverse.</p>
-      <code>npm install -g @mcp/openverse</code>
+      <div class="command-row"><code>npm install -g @mcp/openverse</code><button class="copy-command" type="button" data-command="npm install -g @mcp/openverse" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/librosa/librosa">librosa</a></h3>
       <p>Python audio analysis: beat tracking and tempo detection to sync cuts and movement to music. <a href="https://librosa.org">librosa.org</a></p>
       <p>With an agent: <a href="https://github.com/hugohow/mcp-music-analysis">mcp-music-analysis</a>, a community MCP server that runs librosa analysis.</p>
-      <code>npx -y @smithery/cli install @hugohow/mcp-music-analysis --client claude</code>
+      <div class="command-row"><code class="multiline-command">npx -y @smithery/cli install @hugohow/mcp-music-analysis \
+--client claude</code><button class="copy-command" type="button" data-command="npx -y @smithery/cli install @hugohow/mcp-music-analysis --client claude" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/m-bain/whisperX">WhisperX</a></h3>
       <p>Subtitles with word-level timestamps and speaker diarization, fast batched inference. BSD-2-Clause.</p>
       <p>With an agent: <a href="https://github.com/abubakarsiddik31/whisperx-transcribe">whisperx-transcribe</a>, runs WhisperX and returns a speaker-labeled Markdown transcript.</p>
-      <code>npx skills add abubakarsiddik31/whisperx-transcribe</code>
+      <div class="command-row"><code>npx skills add abubakarsiddik31/whisperx-transcribe</code><button class="copy-command" type="button" data-command="npx skills add abubakarsiddik31/whisperx-transcribe" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg</a></h3>
       <p>Export and conversion for everything: codecs, trimming, muxing audio and subtitles, thumbnails. <a href="https://www.ffmpeg.org">ffmpeg.org</a></p>
       <p>With an agent: <a href="https://github.com/muhammaddadu/ffmpeg-skill">ffmpeg-skill</a>, FFmpeg recipes plus a full production pipeline.</p>
-      <code>npx skills add muhammaddadu/ffmpeg-skill</code>
+      <div class="command-row"><code>npx skills add muhammaddadu/ffmpeg-skill</code><button class="copy-command" type="button" data-command="npx skills add muhammaddadu/ffmpeg-skill" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -192,26 +198,26 @@
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/mirac221/frame-judge">frame-judge</a></h3>
       <p>A separate code-blind critic agent judges captured screenshots and frame sheets against your original request, with a capped revise loop. For UI, animation and video; runs in Claude Code, Cursor, Codex, ChatGPT and Antigravity. Apache-2.0. New, small project.</p>
-      <code>git clone https://github.com/mirac221/frame-judge && node frame-judge/scripts/install.mjs</code>
+      <div class="command-row"><code>git clone https://github.com/mirac221/frame-judge && node frame-judge/scripts/install.mjs</code><button class="copy-command" type="button" data-command="git clone https://github.com/mirac221/frame-judge &amp;&amp; node frame-judge/scripts/install.mjs" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool + skill</span>
       <h3><a href="https://github.com/moritzkremb/framejam">FrameJam</a></h3>
       <p>Pause the render, pin a comment to the exact frame and spot that is off, and the agent revises round by round. Plugin for Claude, ChatGPT and Cursor; local-first, works with any tool that renders MP4, over MCP. MIT. <a href="https://www.framejam.ai">framejam.ai</a></p>
-      <code>npx -y framejam install</code>
+      <div class="command-row"><code>npx -y framejam install</code><button class="copy-command" type="button" data-command="npx -y framejam install" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/whaleyxbt/claude-motion">claude-motion review-loop</a></h3>
       <p>A motion-design toolkit whose review-loop skill renders a draft, tiles one frame per timeline beat into labeled contact sheets, and checks composition, type, timing and consistency against a checklist. Self-review by the same agent, so pair it with your own look. MIT.</p>
-      <code>git clone https://github.com/whaleyxbt/claude-motion && cd claude-motion && npm install && npm run build</code>
+      <div class="command-row"><code>git clone https://github.com/whaleyxbt/claude-motion && cd claude-motion && npm install && npm run build</code><button class="copy-command" type="button" data-command="git clone https://github.com/whaleyxbt/claude-motion &amp;&amp; cd claude-motion &amp;&amp; npm install &amp;&amp; npm run build" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">MCP servers</span>
       <h3><a href="https://github.com/microsoft/playwright-mcp">Playwright MCP</a> / <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Chrome DevTools MCP</a></h3>
       <p>The capture plumbing behind web review loops: an agent drives a real browser, screenshots pages and captures animation states, so there are actual frames to judge. Official servers from Microsoft and Google, both Apache-2.0.</p>
-      <code>npx @playwright/mcp@latest</code>
-      <code>npx -y chrome-devtools-mcp@latest</code>
+      <div class="command-row"><code>npx @playwright/mcp@latest</code><button class="copy-command" type="button" data-command="npx @playwright/mcp@latest" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>npx -y chrome-devtools-mcp@latest</code><button class="copy-command" type="button" data-command="npx -y chrome-devtools-mcp@latest" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -231,5 +237,19 @@
     <br>Source of the starting list: <a href="https://x.com/nanajiang8888/status/2124480396020891988">a public post by @nanajiang8888</a> (Nov 22, 2026); repo links verified against that list.
   </footer>
 </main>
+<script>
+  document.addEventListener("click", async (event) => {
+    const button = event.target.closest(".copy-command");
+    if (!button) return;
+    const original = button.textContent;
+    try {
+      await navigator.clipboard.writeText(button.dataset.command);
+      button.textContent = "Copied";
+    } catch {
+      button.textContent = "Copy failed";
+    }
+    window.setTimeout(() => { button.textContent = original; }, 1600);
+  });
+</script>
 </body>
 </html>
