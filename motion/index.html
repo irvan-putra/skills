@@ -72,7 +72,7 @@
   </div>
 
   <h2>Animation &amp; 3D libraries</h2>
-  <p class="note">"With an agent" lines link a skill (an instruction pack the agent loads) or an MCP server (live tool access) that helps an agent drive that tool. A code line appears when the project has a single install command.</p>
+  <p class="note">"With an agent" lines link a skill (an instruction pack the agent loads) or an MCP server (live tool access) that helps an agent drive that tool. The code line on each card is the project's own documented setup command.</p>
   <div class="grid">
     <div class="card">
       <span class="tag lib">library</span>
@@ -114,18 +114,21 @@
       <h3><a href="https://github.com/Alchemist0823/three.quarks">three.quarks</a></h3>
       <p>Particle effects for three.js: fire, smoke, explosions, magic. MIT. <a href="https://quarks.art">quarks.art</a></p>
       <p>With an agent: the MIT repo ships docs and live examples an agent can follow directly; <a href="https://github.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills">Threejs Awesome Graphics Agent Skills</a> (MIT) adds a broader procedural-vfx pack.</p>
+      <code>npx threejs-awesome-graphics-agent-skills@latest install --agent claude-code</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/cocopon/tweakpane">Tweakpane</a></h3>
       <p>Compact pane to adjust parameters live while developing a scene or animation. MIT.</p>
       <p>With an agent: the <a href="https://tweakpane.github.io/docs/">docs</a> are short enough to read cold; <a href="https://github.com/petekp/agent-skills">tuning-panel</a> builds a Tweakpane, Leva or dat.GUI panel and exports the tuned values (no license file).</p>
+      <code>npx add-skill petekp/agent-skills</code>
     </div>
     <div class="card">
       <span class="tag tool">desktop tool</span>
       <h3><a href="https://github.com/blender/blender">Blender</a></h3>
       <p>Free, open source 3D suite: modeling, rigging, animation, rendering. Exports glTF for the web. <a href="https://www.blender.org">blender.org</a></p>
       <p>With an agent: <a href="https://github.com/ahujasid/mcp-for-blender">Blender MCP</a>, a community MCP server that lets an agent control Blender directly.</p>
+      <code>uvx mcp-for-blender setup</code>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
@@ -139,6 +142,7 @@
       <h3><a href="https://github.com/airbnb/lottie-web">Lottie</a></h3>
       <p>Lightweight vector animations exported from After Effects, played on web and mobile by lottie-web. Huge free library at <a href="https://lottiefiles.com">LottieFiles</a>.</p>
       <p>With an agent: LottieFiles' official <a href="https://creator.lottiefiles.com/agents.md">agent guide + MCP server</a> for driving Lottie Creator.</p>
+      <code>npx -y @lottiefiles/creator-mcp@latest</code>
     </div>
     <div class="card">
       <span class="tag lib">library / engine</span>
@@ -156,12 +160,14 @@
       <h3><a href="https://api.openverse.org/v1/">Openverse API</a></h3>
       <p>Search openly licensed audio (SFX, music) and images. Free anonymous use; optional OAuth registration raises rate limits. Check each result's own license and attribution requirements. <a href="https://docs.openverse.org">Docs</a>.</p>
       <p>With an agent: <a href="https://github.com/neno-is-ooo/mcp-openverse">mcp-openverse</a>, a community MCP server for searching Openverse.</p>
+      <code>npm install -g @mcp/openverse</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/librosa/librosa">librosa</a></h3>
       <p>Python audio analysis: beat tracking and tempo detection to sync cuts and movement to music. <a href="https://librosa.org">librosa.org</a></p>
       <p>With an agent: <a href="https://github.com/hugohow/mcp-music-analysis">mcp-music-analysis</a>, a community MCP server that runs librosa analysis.</p>
+      <code>npx -y @smithery/cli install @hugohow/mcp-music-analysis --client claude</code>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
@@ -198,11 +204,14 @@
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/whaleyxbt/claude-motion">claude-motion review-loop</a></h3>
       <p>A motion-design toolkit whose review-loop skill renders a draft, tiles one frame per timeline beat into labeled contact sheets, and checks composition, type, timing and consistency against a checklist. Self-review by the same agent, so pair it with your own look. MIT.</p>
+      <code>git clone https://github.com/whaleyxbt/claude-motion && cd claude-motion && npm install && npm run build</code>
     </div>
     <div class="card">
       <span class="tag tool">MCP servers</span>
       <h3><a href="https://github.com/microsoft/playwright-mcp">Playwright MCP</a> / <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Chrome DevTools MCP</a></h3>
       <p>The capture plumbing behind web review loops: an agent drives a real browser, screenshots pages and captures animation states, so there are actual frames to judge. Official servers from Microsoft and Google, both Apache-2.0.</p>
+      <code>npx @playwright/mcp@latest</code>
+      <code>npx -y chrome-devtools-mcp@latest</code>
     </div>
   </div>
 
