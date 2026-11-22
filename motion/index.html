@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Motion &amp; Content Creation Skills | vanipy</title>
-<meta name="description" content="A working toolbox of motion-design agent skills, animation and 3D libraries, and production tools for making videos and other content.">
+<meta name="description" content="A working toolbox of motion-design agent skills, animation and 3D libraries, production tools for making videos and other content, and review loops that check what actually rendered.">
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -35,7 +35,7 @@
 <body>
 <main>
   <h1>Motion &amp; Content Creation Skills</h1>
-  <p class="sub">A working toolbox for making videos and other visual content: installable agent skills, animation and 3D libraries, and the production pipeline around them.</p>
+  <p class="sub">A working toolbox for making videos and other visual content: installable agent skills, animation and 3D libraries, the production pipeline around them, and loops that review the render.</p>
 
   <h2>Agent skills <span class="meta">(installable instruction packs for coding agents)</span></h2>
   <p class="note">Each of these is a real, public skill package an agent can load before starting a task.</p>
@@ -178,6 +178,31 @@
     </div>
   </div>
 
+  <h2>Review &amp; feedback loops <span class="meta">(checking what actually rendered)</span></h2>
+  <p class="note">Making the thing is half the job; the other half is looking at what came out. These close that loop: they capture frames, check them against the brief or your pinned comments, and feed fixes back for another pass. One honest limit: an agent reviewer is good at checking the brief and visible defects (blank frames, clipping, collisions, timing, unreadable text), but judging whether a face or a movement feels natural, the <a href="https://en.wikipedia.org/wiki/Uncanny_valley">uncanny valley</a>, is still unreliable and automated detection of it is an open research problem. Keep a human pass for taste.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/mirac221/frame-judge">frame-judge</a></h3>
+      <p>A critic loop where the builder never grades its own work: build and render, capture screenshots and frame sheets, then a separate code-blind critic agent judges only the pixels against the user's original request, with a capped revise loop. For UI, animation and video; runs in Claude Code, Cursor, Codex, ChatGPT and Antigravity. Apache-2.0. New, small project.</p>
+    </div>
+    <div class="card">
+      <span class="tag tool">tool + skill</span>
+      <h3><a href="https://github.com/moritzkremb/framejam">FrameJam</a></h3>
+      <p>Human feedback by pointing: pause the render, click the frame and the exact spot that is off, write the note, and the agent gets timestamped comments with pinned frames and revises round by round. Plugin for Claude, ChatGPT and Cursor; local-first, works with any tool that renders MP4, over MCP. MIT. <a href="https://www.framejam.ai">framejam.ai</a></p>
+    </div>
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/whaleyxbt/claude-motion">claude-motion review-loop</a></h3>
+      <p>A motion-design toolkit for coding agents whose review-loop skill renders a draft, tiles one frame per timeline beat into labeled contact sheets, and checks composition, type, timing and consistency against a checklist before the video is called done. Self-review by the same agent, so pair it with your own look. MIT.</p>
+    </div>
+    <div class="card">
+      <span class="tag tool">MCP servers</span>
+      <h3><a href="https://github.com/microsoft/playwright-mcp">Playwright MCP</a> / <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Chrome DevTools MCP</a></h3>
+      <p>The capture plumbing behind web review loops: let an agent drive a real browser, screenshot pages and capture animation states, so there are actual frames to judge. Official servers from Microsoft and Google, both Apache-2.0.</p>
+    </div>
+  </div>
+
   <h2>How these fit together</h2>
   <ol class="pipeline">
     <li><b>Principles:</b> motion-design-skill sets timing, easing and intent before any code.</li>
@@ -186,6 +211,7 @@
     <li><b>Sync:</b> librosa detects beats so cuts and movement land on the music.</li>
     <li><b>Subtitles:</b> WhisperX generates timed captions.</li>
     <li><b>Export:</b> FFmpeg converts and packages the final files.</li>
+    <li><b>Review:</b> before calling it done, look at the render: frame-judge checks the frames against the brief, FrameJam collects your pinned comments, then revise and check again.</li>
   </ol>
 
   <footer>
