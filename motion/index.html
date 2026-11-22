@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion &amp; Content Creation Skills — vanipy</title>
+<meta name="description" content="A working toolbox of motion-design agent skills, animation and 3D libraries, and production tools for making videos and other content.">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; line-height: 1.55; background: #0f1115; color: #e8e9ec; }
+  main { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .35rem; }
+  h2 { font-size: 1.25rem; margin: 2.5rem 0 .25rem; border-bottom: 1px solid #2a2e38; padding-bottom: .35rem; }
+  p.sub { color: #9aa1ad; margin-top: 0; }
+  p.note { color: #9aa1ad; font-size: .9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .9rem; margin-top: 1rem; }
+  .card { background: #171a21; border: 1px solid #2a2e38; border-radius: 10px; padding: 1rem 1.1rem; }
+  .card h3 { margin: 0 0 .15rem; font-size: 1.02rem; }
+  .card h3 a { color: #7db4ff; text-decoration: none; }
+  .card h3 a:hover { text-decoration: underline; }
+  .tag { display: inline-block; font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; border-radius: 4px; padding: .1rem .45rem; margin-bottom: .5rem; }
+  .tag.skill { background: #14324f; color: #8fc3ff; }
+  .tag.lib { background: #1e3a2a; color: #8fd9a8; }
+  .tag.tool { background: #3a2f14; color: #e3c573; }
+  .card p { margin: .4rem 0; font-size: .92rem; color: #c6cbd4; }
+  .card code { display: inline-block; background: #0d0f13; border: 1px solid #2a2e38; border-radius: 5px; padding: .15rem .5rem; font-size: .8rem; color: #a8e6a1; margin-top: .35rem; }
+  .meta { font-size: .8rem; color: #7d8490; }
+  ol.pipeline { color: #c6cbd4; }
+  ol.pipeline li { margin: .3rem 0; }
+  a { color: #7db4ff; }
+  footer { margin-top: 3rem; font-size: .82rem; color: #7d8490; border-top: 1px solid #2a2e38; padding-top: 1rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Motion &amp; Content Creation Skills</h1>
+  <p class="sub">A working toolbox for making videos and other visual content: installable agent skills, animation and 3D libraries, and the production pipeline around them.</p>
+
+  <h2>Agent skills <span class="meta">(installable instruction packs for coding agents)</span></h2>
+  <p class="note">Each of these is a real, public skill package an agent can load before starting a task.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/LottieFiles/motion-design-skill">motion-design-skill</a></h3>
+      <p>Motion design principles for agents: timing, easing, choreography, and Disney's 12 animation principles adapted for UI. Implementation-agnostic (CSS, Motion, GSAP, Lottie, springs). MIT.</p>
+      <code>npx skills add LottieFiles/motion-design-skill</code>
+    </div>
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/remotion-dev/skills">Remotion Skills</a></h3>
+      <p>Remotion's official skill set (14 skills) that teaches agents to create, preview and render videos: best practices, markup, rendering, studio control. <a href="https://www.skills.sh/remotion-dev">Listings</a>.</p>
+      <code>npx skills add remotion-dev/skills</code>
+    </div>
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/lucasmarkes/hairline">hairline</a></h3>
+      <p>Isometric line art that reacts to the pointer. <b>hairline-create</b> draws a figure from an idea; <b>hairline-adopt</b> rebuilds an existing SVG on the same engine. Output is a single HTML file. MIT. <a href="https://hairline.lucasmarkes.com/skills">Docs</a>.</p>
+      <code>npx skills add lucasmarkes/hairline</code>
+    </div>
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/wheresryan22/anatomy">anatomy</a></h3>
+      <p>Interactive isometric SVG diagrams that explain a technical idea as a real physical object or machine, with optional WebGL shaders and a beta true-3D mode. <a href="https://skills.wheresryan.sh/anatomy">Author's page</a>.</p>
+    </div>
+    <div class="card">
+      <span class="tag skill">agent skill</span>
+      <h3><a href="https://github.com/annnguyentt/anatomy-reveal-skill">anatomy-reveal</a></h3>
+      <p>Builds an object (product, tool, instrument) as a many-part isometric figure, then produces an exploded-view reveal film and an interactive dissection page. Works from a photo or a name. MIT.</p>
+    </div>
+  </div>
+
+  <h2>Animation &amp; 3D libraries</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://motion.dev">Motion</a></h3>
+      <p>Spring motion and screen transitions for React and JavaScript (formerly Framer Motion). The default choice for UI animation in React.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://gsap.com">GSAP</a></h3>
+      <p>Timeline-based animation for the web. Precise sequencing of many elements, scroll triggers, SVG morphing.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://threejs.org">Three.js</a></h3>
+      <p>3D scenes and cameras in the browser. The base layer for WebGL content; pairs with react-three-fiber in React.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://github.com/pmndrs/react-three-rapier">react-three-rapier</a></h3>
+      <p>Rapier physics in 3D React scenes: collisions, gravity, ragdolls. MIT.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://github.com/pmndrs/react-postprocessing">react-postprocessing</a></h3>
+      <p>Cinematic post effects for react-three-fiber: bloom, blur, depth of field, vignette.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://github.com/Alchemist0823/three.quarks">three.quarks</a></h3>
+      <p>Particle effects for three.js: fire, smoke, explosions, magic. Batched rendering, Unity-Shuriken-style features. MIT. <a href="https://quarks.art">quarks.art</a></p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://github.com/cocopon/tweakpane">Tweakpane</a></h3>
+      <p>Compact pane to adjust parameters live while developing a scene or animation.</p>
+    </div>
+    <div class="card">
+      <span class="tag tool">desktop tool</span>
+      <h3><a href="https://www.blender.org">Blender</a></h3>
+      <p>Free and open source 3D suite: rigging and character animation, modeling, rendering. Export glTF for the web.</p>
+    </div>
+    <div class="card">
+      <span class="tag tool">tool</span>
+      <h3><a href="https://www.manim.community">Manim</a></h3>
+      <p>Programmatic animation of diagrams, formulas and explainers, the style known from math channels. Python.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library / format</span>
+      <h3><a href="https://lottiefiles.com">Lottie</a></h3>
+      <p>Lightweight vector animations exported from After Effects, played on web and mobile. Huge free library at LottieFiles.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library / engine</span>
+      <h3><a href="https://www.remotion.dev">Remotion</a></h3>
+      <p>Video engine in React: compositions, sequences, rendering to MP4. The foundation the Remotion skills teach agents to drive.</p>
+    </div>
+  </div>
+
+  <h2>Production pipeline</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="tag tool">API</span>
+      <h3><a href="https://api.openverse.org/v1/">Openverse API</a></h3>
+      <p>Search openly licensed audio (SFX, music) and images. Free anonymous use; optional OAuth registration raises rate limits. <a href="https://docs.openverse.org">Docs</a>.</p>
+    </div>
+    <div class="card">
+      <span class="tag lib">library</span>
+      <h3><a href="https://librosa.org">librosa</a></h3>
+      <p>Python audio analysis: beat tracking and tempo detection to sync cuts and movement to music.</p>
+    </div>
+    <div class="card">
+      <span class="tag tool">tool</span>
+      <h3><a href="https://github.com/m-bain/whisperX">WhisperX</a></h3>
+      <p>Automatic subtitles with word-level timestamps and speaker diarization, fast batched inference. BSD-2-Clause.</p>
+    </div>
+    <div class="card">
+      <span class="tag tool">tool</span>
+      <h3><a href="https://www.ffmpeg.org">FFmpeg</a></h3>
+      <p>Export and conversion for everything: codecs, trimming, muxing audio and subtitles, thumbnails.</p>
+    </div>
+  </div>
+
+  <h2>How these fit together</h2>
+  <ol class="pipeline">
+    <li><b>Principles</b> — motion-design-skill sets timing, easing and intent before any code.</li>
+    <li><b>Build</b> — Remotion (with its official skills) for video; Three.js + rapier + postprocessing + quarks for interactive 3D; hairline, anatomy, anatomy-reveal for line art and object explainers; Manim for formulas; Lottie for light vector loops.</li>
+    <li><b>Audio</b> — find licensed SFX and music through the Openverse API.</li>
+    <li><b>Sync</b> — librosa detects beats so cuts and movement land on the music.</li>
+    <li><b>Subtitles</b> — WhisperX generates timed captions.</li>
+    <li><b>Export</b> — FFmpeg converts and packages the final files.</li>
+  </ol>
+
+  <footer>
+    Every name on this page was checked against its official source on 2026-11-23. Entries marked as agent skills are public skill packages; the rest are libraries, APIs or tools. License notes are included only where verified. Part of <a href="https://vanipy.com">vanipy.com</a>.
+  </footer>
+</main>
+</body>
+</html>
