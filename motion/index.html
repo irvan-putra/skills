@@ -37,113 +37,114 @@
   <h1>Motion &amp; Content Creation Skills</h1>
   <p class="sub">A working toolbox for making videos and other visual content: installable agent skills, animation and 3D libraries, the production pipeline around them, and loops that review the render.</p>
 
-  <h2>Agent skills <span class="meta">(installable instruction packs for coding agents)</span></h2>
-  <p class="note">Each of these is a real, public skill package an agent can load before starting a task.</p>
+  <h2>Agent skills <span class="meta">(public instruction packs an agent loads before a task)</span></h2>
   <div class="grid">
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/LottieFiles/motion-design-skill">motion-design-skill</a></h3>
-      <p>Motion design principles for agents: timing, easing, choreography, and Disney's 12 animation principles adapted for UI. Implementation-agnostic (CSS, Motion, GSAP, Lottie, springs). MIT.</p>
+      <p>Motion design principles for agents: timing, easing, choreography, Disney's 12 principles adapted for UI. Works with CSS, Motion, GSAP, Lottie, springs. MIT.</p>
       <code>npx skills add LottieFiles/motion-design-skill</code>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/remotion-dev/skills">Remotion Skills</a></h3>
-      <p>Remotion's official skill set (14 skills) that teaches agents to create, preview and render videos: best practices, markup, rendering, studio control. <a href="https://www.skills.sh/remotion-dev">Listings</a>.</p>
+      <p>Remotion's official skill set (14 skills) for creating, previewing and rendering videos. <a href="https://www.skills.sh/remotion-dev">Listings</a>.</p>
       <code>npx skills add remotion-dev/skills</code>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/lucasmarkes/hairline">hairline</a></h3>
-      <p>Isometric line art that reacts to the pointer. <b>hairline-create</b> draws a figure from an idea; <b>hairline-adopt</b> rebuilds an existing SVG on the same engine. Output is a single HTML file. MIT. <a href="https://hairline.lucasmarkes.com/skills">Docs</a>.</p>
+      <p>Isometric line art that reacts to the pointer. <b>hairline-create</b> draws a figure from an idea; <b>hairline-adopt</b> rebuilds an existing SVG. Output is a single HTML file. MIT. <a href="https://hairline.lucasmarkes.com/skills">Docs</a>.</p>
       <code>npx skills add lucasmarkes/hairline</code>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/wheresryan22/anatomy">anatomy</a></h3>
       <p>Interactive isometric SVG diagrams that explain a technical idea as a real physical object or machine, with optional WebGL shaders and a beta true-3D mode. <a href="https://skills.wheresryan.sh/anatomy">Author's page</a>.</p>
+      <code>npx skills add wheresryan22/anatomy</code>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/annnguyentt/anatomy-reveal-skill">anatomy-reveal</a></h3>
-      <p>Builds an object (product, tool, instrument) as a many-part isometric figure, then produces an exploded-view reveal film and an interactive dissection page. Works from a photo or a name. MIT. <a href="https://typingmind.com/skills/annnguyentt-anatomy-reveal">TypingMind listing</a>.</p>
+      <p>Builds an object as a many-part isometric figure, then produces an exploded-view reveal film and an interactive dissection page. Works from a photo or a name. MIT. <a href="https://typingmind.com/skills/annnguyentt-anatomy-reveal">TypingMind listing</a>.</p>
+      <code>npx skills add annnguyentt/anatomy-reveal-skill</code>
     </div>
   </div>
 
   <h2>Animation &amp; 3D libraries</h2>
-  <p class="note">"With an agent" lines link to a skill (an instruction pack the agent loads) or an MCP server (live tool access for the agent) that helps it drive that tool.</p>
+  <p class="note">"With an agent" lines link a skill (an instruction pack the agent loads) or an MCP server (live tool access) that helps an agent drive that tool. A code line appears when the project has a single install command.</p>
   <div class="grid">
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/motiondivision/motion">Motion</a></h3>
-      <p>Spring motion and screen transitions for React and JavaScript (formerly Framer Motion). The default choice for UI animation in React. <a href="https://motion.dev">motion.dev</a></p>
-      <p>With an agent: <a href="https://motion.dev/ai-kit">Motion AI Kit</a> (skill + MCP server), the official pack from the Motion team with current docs.</p>
+      <p>Spring motion and screen transitions for React and JavaScript (formerly Framer Motion). <a href="https://motion.dev">motion.dev</a></p>
+      <p>With an agent: <a href="https://motion.dev/ai-kit">Motion AI Kit</a>, the official skill + MCP server from the Motion team.</p>
       <code>npx motion-ai</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/greensock/GSAP">GSAP</a></h3>
-      <p>Timeline-based animation for the web. Precise sequencing of many elements, scroll triggers, SVG morphing. <a href="https://gsap.com">gsap.com</a></p>
-      <p>With an agent: <a href="https://github.com/greensock/gsap-skills">GSAP Skills</a> (skill), GreenSock's official skill set for coding agents.</p>
+      <p>Timeline-based animation for the web: precise sequencing, scroll triggers, SVG morphing. <a href="https://gsap.com">gsap.com</a></p>
+      <p>With an agent: <a href="https://github.com/greensock/gsap-skills">GSAP Skills</a>, GreenSock's official skill set.</p>
       <code>npx skills add greensock/gsap-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/mrdoob/three.js">Three.js</a></h3>
-      <p>3D scenes and cameras in the browser. The base layer for WebGL content; pairs with react-three-fiber in React. <a href="https://threejs.org">threejs.org</a></p>
-      <p>With an agent: <a href="https://github.com/CloudAI-X/threejs-skills">threejs-skills</a> (skill collection), 13 packs covering current three.js, WebGPU/TSL and react-three-fiber.</p>
+      <p>3D scenes and cameras in the browser; the base layer for WebGL content, pairs with react-three-fiber. <a href="https://threejs.org">threejs.org</a></p>
+      <p>With an agent: <a href="https://github.com/CloudAI-X/threejs-skills">threejs-skills</a>, 13 packs covering current three.js, WebGPU/TSL and react-three-fiber.</p>
       <code>npx skills add cloudai-x/threejs-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/pmndrs/react-three-rapier">react-three-rapier</a></h3>
       <p>Rapier physics in 3D React scenes: collisions, gravity, ragdolls. MIT.</p>
-      <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> (skill collection) includes r3f-physics, a Rapier bodies-and-colliders pack.</p>
+      <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> includes r3f-physics, a Rapier bodies-and-colliders pack.</p>
       <code>npx skills add EnzeD/r3f-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/pmndrs/react-postprocessing">react-postprocessing</a></h3>
       <p>Cinematic post effects for react-three-fiber: bloom, blur, depth of field, vignette.</p>
-      <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> (skill collection) includes r3f-postprocessing, for composer pipelines and screen effects.</p>
+      <p>With an agent: <a href="https://github.com/EnzeD/r3f-skills">r3f-skills</a> includes r3f-postprocessing, for composer pipelines and screen effects.</p>
       <code>npx skills add EnzeD/r3f-skills</code>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/Alchemist0823/three.quarks">three.quarks</a></h3>
-      <p>Particle effects for three.js: fire, smoke, explosions, magic. Batched rendering, Unity-Shuriken-style features. MIT. <a href="https://quarks.art">quarks.art</a></p>
-      <p>Free routes for agent guidance: the <a href="https://github.com/Alchemist0823/three.quarks">three.quarks repo</a> itself is MIT and ships docs plus live examples an agent can read and follow directly. For a free skill, <a href="https://github.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills">Threejs Awesome Graphics Agent Skills</a> (MIT) has a procedural-vfx pack for hand-rolled effects; that is a broader route, not a particle-engine replacement for quarks.</p>
+      <p>Particle effects for three.js: fire, smoke, explosions, magic. MIT. <a href="https://quarks.art">quarks.art</a></p>
+      <p>With an agent: the MIT repo ships docs and live examples an agent can follow directly; <a href="https://github.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills">Threejs Awesome Graphics Agent Skills</a> (MIT) adds a broader procedural-vfx pack.</p>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/cocopon/tweakpane">Tweakpane</a></h3>
-      <p>Compact pane to adjust parameters live while developing a scene or animation.</p>
-      <p>Free routes for agent guidance: Tweakpane itself is free (MIT) and its <a href="https://tweakpane.github.io/docs/">docs</a> are short enough for an agent to read cold. For a free skill, <a href="https://github.com/petekp/agent-skills">tuning-panel</a> builds a Tweakpane, Leva or dat.GUI panel and exports the tuned values back for the agent; a small project with no license file.</p>
+      <p>Compact pane to adjust parameters live while developing a scene or animation. MIT.</p>
+      <p>With an agent: the <a href="https://tweakpane.github.io/docs/">docs</a> are short enough to read cold; <a href="https://github.com/petekp/agent-skills">tuning-panel</a> builds a Tweakpane, Leva or dat.GUI panel and exports the tuned values (no license file).</p>
     </div>
     <div class="card">
       <span class="tag tool">desktop tool</span>
       <h3><a href="https://github.com/blender/blender">Blender</a></h3>
-      <p>Free and open source 3D suite: rigging and character animation, modeling, rendering. Export glTF for the web. <a href="https://www.blender.org">blender.org</a></p>
-      <p>With an agent: <a href="https://github.com/ahujasid/mcp-for-blender">Blender MCP</a> (MCP server), a community server that lets an agent control Blender directly.</p>
+      <p>Free, open source 3D suite: modeling, rigging, animation, rendering. Exports glTF for the web. <a href="https://www.blender.org">blender.org</a></p>
+      <p>With an agent: <a href="https://github.com/ahujasid/mcp-for-blender">Blender MCP</a>, a community MCP server that lets an agent control Blender directly.</p>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/ManimCommunity/manim">Manim</a></h3>
       <p>Programmatic animation of diagrams, formulas and explainers, the style known from math channels. Python. <a href="https://www.manim.community">manim.community</a></p>
-      <p>With an agent: <a href="https://github.com/vumichien/manim-skill">manim-skill</a> (skill), an agent pipeline that turns ideas and math into Manim scenes. Apache-2.0.</p>
+      <p>With an agent: <a href="https://github.com/vumichien/manim-skill">manim-skill</a>, an agent pipeline that turns ideas and math into Manim scenes. Apache-2.0.</p>
       <code>npx skills add vumichien/manim-skill</code>
     </div>
     <div class="card">
       <span class="tag lib">library / format</span>
       <h3><a href="https://github.com/airbnb/lottie-web">Lottie</a></h3>
-      <p>Lightweight vector animations exported from After Effects, played on web and mobile by the lottie-web player. Huge free library at <a href="https://lottiefiles.com">LottieFiles</a>.</p>
-      <p>With an agent: <a href="https://creator.lottiefiles.com/agents.md">creator.lottiefiles.com/agents.md</a> (guide + MCP server), LottieFiles' official guide to driving Lottie Creator from an agent.</p>
+      <p>Lightweight vector animations exported from After Effects, played on web and mobile by lottie-web. Huge free library at <a href="https://lottiefiles.com">LottieFiles</a>.</p>
+      <p>With an agent: LottieFiles' official <a href="https://creator.lottiefiles.com/agents.md">agent guide + MCP server</a> for driving Lottie Creator.</p>
     </div>
     <div class="card">
       <span class="tag lib">library / engine</span>
       <h3><a href="https://github.com/remotion-dev/remotion">Remotion</a></h3>
-      <p>Video engine in React: compositions, sequences, rendering to MP4. The foundation the Remotion skills teach agents to drive. <a href="https://www.remotion.dev">remotion.dev</a></p>
-      <p>With an agent: the official <a href="https://github.com/remotion-dev/skills">Remotion Skills</a> (skill) listed above.</p>
+      <p>Video engine in React: compositions, sequences, rendering to MP4. <a href="https://www.remotion.dev">remotion.dev</a></p>
+      <p>With an agent: the official <a href="https://github.com/remotion-dev/skills">Remotion Skills</a> listed above.</p>
       <code>npx skills add remotion-dev/skills</code>
     </div>
   </div>
@@ -153,53 +154,55 @@
     <div class="card">
       <span class="tag tool">API</span>
       <h3><a href="https://api.openverse.org/v1/">Openverse API</a></h3>
-      <p>Search openly licensed audio (SFX, music) and images. Free anonymous use; optional OAuth registration raises rate limits. Every asset carries its own license, so check the license and attribution requirements on each result before using it. <a href="https://docs.openverse.org">Docs</a>.</p>
-      <p>With an agent: <a href="https://github.com/neno-is-ooo/mcp-openverse">mcp-openverse</a> (MCP server), a community server for searching Openverse from an agent.</p>
+      <p>Search openly licensed audio (SFX, music) and images. Free anonymous use; optional OAuth registration raises rate limits. Check each result's own license and attribution requirements. <a href="https://docs.openverse.org">Docs</a>.</p>
+      <p>With an agent: <a href="https://github.com/neno-is-ooo/mcp-openverse">mcp-openverse</a>, a community MCP server for searching Openverse.</p>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
       <h3><a href="https://github.com/librosa/librosa">librosa</a></h3>
       <p>Python audio analysis: beat tracking and tempo detection to sync cuts and movement to music. <a href="https://librosa.org">librosa.org</a></p>
-      <p>With an agent: <a href="https://github.com/hugohow/mcp-music-analysis">mcp-music-analysis</a> (MCP server), a community server that runs librosa analysis for an agent.</p>
+      <p>With an agent: <a href="https://github.com/hugohow/mcp-music-analysis">mcp-music-analysis</a>, a community MCP server that runs librosa analysis.</p>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/m-bain/whisperX">WhisperX</a></h3>
-      <p>Automatic subtitles with word-level timestamps and speaker diarization, fast batched inference. BSD-2-Clause.</p>
-      <p>With an agent: <a href="https://github.com/abubakarsiddik31/whisperx-transcribe">whisperx-transcribe</a> (skill), runs WhisperX and returns a speaker-labeled Markdown transcript.</p>
+      <p>Subtitles with word-level timestamps and speaker diarization, fast batched inference. BSD-2-Clause.</p>
+      <p>With an agent: <a href="https://github.com/abubakarsiddik31/whisperx-transcribe">whisperx-transcribe</a>, runs WhisperX and returns a speaker-labeled Markdown transcript.</p>
       <code>npx skills add abubakarsiddik31/whisperx-transcribe</code>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
       <h3><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg</a></h3>
       <p>Export and conversion for everything: codecs, trimming, muxing audio and subtitles, thumbnails. <a href="https://www.ffmpeg.org">ffmpeg.org</a></p>
-      <p>With an agent: <a href="https://github.com/muhammaddadu/ffmpeg-skill">ffmpeg-skill</a> (skill), FFmpeg recipes plus a full production pipeline, as described by its author.</p>
+      <p>With an agent: <a href="https://github.com/muhammaddadu/ffmpeg-skill">ffmpeg-skill</a>, FFmpeg recipes plus a full production pipeline.</p>
       <code>npx skills add muhammaddadu/ffmpeg-skill</code>
     </div>
   </div>
 
   <h2>Review &amp; feedback loops <span class="meta">(checking what actually rendered)</span></h2>
-  <p class="note">Making the thing is half the job; the other half is looking at what came out. These close that loop: they capture frames, check them against the brief or your pinned comments, and feed fixes back for another pass. One caution: these projects describe feedback workflows, not proof that they catch every defect or reliably flag unnatural, <a href="https://en.wikipedia.org/wiki/Uncanny_valley">uncanny valley</a> looking output. We have not installed or tested them here, so human review remains the final gate.</p>
+  <p class="note">These capture the render, check it against the brief or your pinned comments, and feed fixes back for another pass. They describe feedback workflows, not proof that they catch every defect or reliably flag unnatural, <a href="https://en.wikipedia.org/wiki/Uncanny_valley">uncanny valley</a> looking output. None are tested here, so human review stays the final gate.</p>
   <div class="grid">
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/mirac221/frame-judge">frame-judge</a></h3>
-      <p>A critic loop where the builder never grades its own work: build and render, capture screenshots and frame sheets, then a separate code-blind critic agent judges only the pixels against the user's original request, with a capped revise loop. For UI, animation and video; runs in Claude Code, Cursor, Codex, ChatGPT and Antigravity. Apache-2.0. New, small project.</p>
+      <p>A separate code-blind critic agent judges captured screenshots and frame sheets against your original request, with a capped revise loop. For UI, animation and video; runs in Claude Code, Cursor, Codex, ChatGPT and Antigravity. Apache-2.0. New, small project.</p>
+      <code>git clone https://github.com/mirac221/frame-judge && node frame-judge/scripts/install.mjs</code>
     </div>
     <div class="card">
       <span class="tag tool">tool + skill</span>
       <h3><a href="https://github.com/moritzkremb/framejam">FrameJam</a></h3>
-      <p>Human feedback by pointing: pause the render, click the frame and the exact spot that is off, write the note, and the agent gets timestamped comments with pinned frames and revises round by round. Plugin for Claude, ChatGPT and Cursor; local-first, works with any tool that renders MP4, over MCP. MIT. <a href="https://www.framejam.ai">framejam.ai</a></p>
+      <p>Pause the render, pin a comment to the exact frame and spot that is off, and the agent revises round by round. Plugin for Claude, ChatGPT and Cursor; local-first, works with any tool that renders MP4, over MCP. MIT. <a href="https://www.framejam.ai">framejam.ai</a></p>
+      <code>npx -y framejam install</code>
     </div>
     <div class="card">
       <span class="tag skill">agent skill</span>
       <h3><a href="https://github.com/whaleyxbt/claude-motion">claude-motion review-loop</a></h3>
-      <p>A motion-design toolkit for coding agents whose review-loop skill renders a draft, tiles one frame per timeline beat into labeled contact sheets, and checks composition, type, timing and consistency against a checklist before the video is called done. Self-review by the same agent, so pair it with your own look. MIT.</p>
+      <p>A motion-design toolkit whose review-loop skill renders a draft, tiles one frame per timeline beat into labeled contact sheets, and checks composition, type, timing and consistency against a checklist. Self-review by the same agent, so pair it with your own look. MIT.</p>
     </div>
     <div class="card">
       <span class="tag tool">MCP servers</span>
       <h3><a href="https://github.com/microsoft/playwright-mcp">Playwright MCP</a> / <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Chrome DevTools MCP</a></h3>
-      <p>The capture plumbing behind web review loops: let an agent drive a real browser, screenshot pages and capture animation states, so there are actual frames to judge. Official servers from Microsoft and Google, both Apache-2.0.</p>
+      <p>The capture plumbing behind web review loops: an agent drives a real browser, screenshots pages and captures animation states, so there are actual frames to judge. Official servers from Microsoft and Google, both Apache-2.0.</p>
     </div>
   </div>
 
@@ -211,11 +214,11 @@
     <li><b>Sync:</b> librosa detects beats so cuts and movement land on the music.</li>
     <li><b>Subtitles:</b> WhisperX generates timed captions.</li>
     <li><b>Export:</b> FFmpeg converts and packages the final files.</li>
-    <li><b>Review:</b> before calling it done, look at the render: frame-judge checks the frames against the brief, FrameJam collects your pinned comments, then revise and check again.</li>
+    <li><b>Review:</b> frame-judge checks the frames against the brief, FrameJam collects your pinned comments, then revise and check again.</li>
   </ol>
 
   <footer>
-    Every name on this page was checked against its official source on 2026-11-23. Entries marked as agent skills are public skill packages; "with an agent" links are skills or MCP servers for that tool; the rest are libraries, APIs or tools. License notes are included only where verified. Part of <a href="https://vanipy.com">vanipy.com</a>.
+    Every name on this page was checked against its official source on 2026-11-23. Agent skills are public skill packages; "with an agent" links are skills or MCP servers for that tool. License notes appear only where verified. Part of <a href="https://vanipy.com">vanipy.com</a>.
     <br>Source of the starting list: <a href="https://x.com/nanajiang8888/status/2124480396020891988">a public post by @nanajiang8888</a> (Nov 22, 2026); repo links verified against that list.
   </footer>
 </main>
