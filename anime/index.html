@@ -89,11 +89,6 @@
       <div class="command-row"><code>curl -X POST https://api.pixai.art/v2/image/create -H &quot;Authorization: Bearer $PIXAI_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;modelVersionId&quot;:&quot;MODEL_VERSION_ID&quot;,&quot;prompt&quot;:&quot;an anime girl in a sunflower field&quot;,&quot;aspectRatio&quot;:&quot;3:5&quot;}&#x27;</code><button class="copy-command" type="button" data-command="curl -X POST https://api.pixai.art/v2/image/create -H &quot;Authorization: Bearer $PIXAI_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;modelVersionId&quot;:&quot;MODEL_VERSION_ID&quot;,&quot;prompt&quot;:&quot;an anime girl in a sunflower field&quot;,&quot;aspectRatio&quot;:&quot;3:5&quot;}&#x27;" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
-      <span class="tag service">service</span>
-      <h3><a href="https://novelai.net/">NovelAI</a></h3>
-      <p>Anime image generation plus storytelling tools; subscription service with its own anime-tuned models.</p>
-    </div>
-    <div class="card">
       <span class="tag model">open model</span>
       <h3><a href="https://huggingface.co/cagliostrolab/animagine-xl-4.0">Animagine XL 4.0</a></h3>
       <p>The most-downloaded open anime checkpoint (SDXL, text-to-image). Runs locally or in ComfyUI. OpenRAIL++ license; check its use restrictions.</p>
@@ -167,11 +162,6 @@
       <p>Script to scenes, storyboard and timeline, with Elements for recurring characters and locations. Genre-agnostic, useful for planning an anime storyboard even if the final look comes from elsewhere.</p>
       <p class="meta">The LTX API is a separate developer product from the LTX Studio app (key from the LTX Developer Console). Source: docs.ltx.io quick start.</p>
       <div class="command-row"><code>curl -X POST https://api.ltx.io/v2/text-to-video -H &quot;Authorization: Bearer YOUR_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;prompt&quot;:&quot;A majestic eagle soaring through clouds at sunset&quot;,&quot;model&quot;:&quot;ltx-2-5-pro&quot;,&quot;duration&quot;:8,&quot;resolution&quot;:&quot;1920x1080&quot;}&#x27;</code><button class="copy-command" type="button" data-command="curl -X POST https://api.ltx.io/v2/text-to-video -H &quot;Authorization: Bearer YOUR_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;prompt&quot;:&quot;A majestic eagle soaring through clouds at sunset&quot;,&quot;model&quot;:&quot;ltx-2-5-pro&quot;,&quot;duration&quot;:8,&quot;resolution&quot;:&quot;1920x1080&quot;}&#x27;" aria-label="Copy command">Copy</button></div>
-    </div>
-    <div class="card">
-      <span class="tag service">service</span>
-      <h3><a href="https://www.animey.ai/">Animey</a></h3>
-      <p>Purpose-built for anime series: you approve a six-view reference sheet per character once, every shot is drawn from it as a keyframe before motion, and episodes render with voices, music and subtitles. Original characters only; it refuses existing franchises and real people.</p>
     </div>
   </div>
 
@@ -252,8 +242,8 @@
 
   <h2>How these fit together</h2>
   <ol class="pipeline">
-    <li><b>Series bible:</b> fix the cast sheets, art style and voices once (anime-series-maker, Animey), so every episode reuses them.</li>
-    <li><b>Keyframes:</b> generate character sheets and shot stills (PixAI, NovelAI, or Animagine / Illustrious in ComfyUI) and approve them before paying for any motion.</li>
+    <li><b>Series bible:</b> fix the cast sheets, art style and voices once (anime-series-maker), so every episode reuses them.</li>
+    <li><b>Keyframes:</b> generate character sheets and shot stills (PixAI or Animagine / Illustrious in ComfyUI) and approve them before paying for any motion.</li>
     <li><b>Motion, one shot at a time:</b> image-to-video clips (Vidu, Kling, Hailuo) or keyframe inbetweening (ToonCrafter); each shot stays within the generator's clip limit.</li>
     <li><b>Voices:</b> cast one voice per character (GPT-SoVITS, Style-Bert-VITS2, ElevenLabs) and keep it fixed for the series.</li>
     <li><b>Edit:</b> join normalized clips, add music and sound, set loudness (the skills above automate this with FFmpeg).</li>
@@ -262,7 +252,7 @@
   </ol>
 
   <footer>
-    Every name on this page was checked against its official source on 2026-11-23. License notes appear only where verified. Market context (clip lengths, model versions, free allowances) comes from vendor pages and two dated comparisons: the <a href="https://www.animey.ai/blog/best-ai-anime-generators">Animey comparison</a> (a vendor blog, read with that in mind, facts checked 2026-10-08) and <a href="https://iosur.com/en/posts/chinese-models-tested/">iosur's Chinese-model comparison</a> (updated 2026-10-23). Prices and limits in AI video change monthly; confirm on the official site before subscribing. Terminal and API commands are copied from each vendor's official docs or repo on 2026-11-23 and were not run here: most need an account, API key or paid plan. NovelAI and Animey list no official CLI or MCP, so they have no command. None of the skills or services are tested by us. Part of <a href="https://vanipy.com">vanipy.com</a>.
+    Every name on this page was checked against its official source on 2026-11-23. License notes appear only where verified. Market context (clip lengths, model versions, free allowances) comes from vendor pages and a dated comparison: <a href="https://iosur.com/en/posts/chinese-models-tested/">iosur's Chinese-model comparison</a> (updated 2026-10-23). Prices and limits in AI video change monthly; confirm on the official site before subscribing. Terminal and API commands are copied from each vendor's official docs or repo on 2026-11-23 and were not run here: most need an account, API key or paid plan. None of the skills or services are tested by us. Part of <a href="https://vanipy.com">vanipy.com</a>.
   </footer>
 </main>
 <script>
