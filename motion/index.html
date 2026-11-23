@@ -85,6 +85,8 @@
       <p>Spring motion and screen transitions for React and JavaScript (formerly Framer Motion). <a href="https://motion.dev">motion.dev</a></p>
       <p>With an agent: <a href="https://motion.dev/ai-kit">Motion AI Kit</a>, the official skill + MCP server from the Motion team.</p>
       <div class="command-row"><code>npx motion-ai</code><button class="copy-command" type="button" data-command="npx motion-ai" aria-label="Copy command">Copy</button></div>
+      <p class="meta">The installer above sets up the free skill and docs-search MCP; Motion+ members add the premium MCP with the line below. Source: motion.dev/docs/ai-kit-install.</p>
+      <div class="command-row"><code>npx motion-ai --plus</code><button class="copy-command" type="button" data-command="npx motion-ai --plus" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library</span>
@@ -134,6 +136,8 @@
       <p>Free, open source 3D suite: modeling, rigging, animation, rendering. Exports glTF for the web. <a href="https://www.blender.org">blender.org</a></p>
       <p>With an agent: <a href="https://github.com/ahujasid/mcp-for-blender">Blender MCP</a>, a community MCP server that lets an agent control Blender directly.</p>
       <div class="command-row"><code>uvx mcp-for-blender setup</code><button class="copy-command" type="button" data-command="uvx mcp-for-blender setup" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Blender's own command line renders without opening the UI; this renders the whole animation of a .blend file in background mode. Source: Blender manual, Rendering From The Command Line.</p>
+      <div class="command-row"><code>blender -b file.blend -a</code><button class="copy-command" type="button" data-command="blender -b file.blend -a" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
@@ -141,6 +145,8 @@
       <p>Programmatic animation of diagrams, formulas and explainers, the style known from math channels. Python. <a href="https://www.manim.community">manim.community</a></p>
       <p>With an agent: <a href="https://github.com/vumichien/manim-skill">manim-skill</a>, an agent pipeline that turns ideas and math into Manim scenes. Apache-2.0.</p>
       <div class="command-row"><code>npx skills add vumichien/manim-skill</code><button class="copy-command" type="button" data-command="npx skills add vumichien/manim-skill" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Manim's own CLI renders a scene class to video and previews it (-p) at low quality (-ql) for a fast check. Source: manim.community quickstart.</p>
+      <div class="command-row"><code>manim -pql scene.py SquareToCircle</code><button class="copy-command" type="button" data-command="manim -pql scene.py SquareToCircle" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library / format</span>
@@ -148,6 +154,9 @@
       <p>Lightweight vector animations exported from After Effects, played on web and mobile by lottie-web. Huge free library at <a href="https://lottiefiles.com">LottieFiles</a>.</p>
       <p>With an agent: LottieFiles' official <a href="https://creator.lottiefiles.com/agents.md">agent guide + MCP server</a> for driving Lottie Creator.</p>
       <div class="command-row"><code>npx -y @lottiefiles/creator-mcp@latest</code><button class="copy-command" type="button" data-command="npx -y @lottiefiles/creator-mcp@latest" aria-label="Copy command">Copy</button></div>
+      <p class="meta">LottieFiles' official relottie CLI inspects and transforms Lottie JSON from the terminal. Source: docs.lottiefiles.com relottie-cli reference.</p>
+      <div class="command-row"><code>npm install -g @lottiefiles/relottie-cli</code><button class="copy-command" type="button" data-command="npm install -g @lottiefiles/relottie-cli" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>relottie animation.json</code><button class="copy-command" type="button" data-command="relottie animation.json" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag lib">library / engine</span>
@@ -155,6 +164,8 @@
       <p>Video engine in React: compositions, sequences, rendering to MP4. <a href="https://www.remotion.dev">remotion.dev</a></p>
       <p>With an agent: the official <a href="https://github.com/remotion-dev/skills">Remotion Skills</a> listed above.</p>
       <div class="command-row"><code>npx skills add remotion-dev/skills</code><button class="copy-command" type="button" data-command="npx skills add remotion-dev/skills" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Remotion's own CLI renders a composition to MP4 (it asks which one, then writes to the out folder). Source: remotion.dev/docs/cli/render.</p>
+      <div class="command-row"><code>npx remotion render</code><button class="copy-command" type="button" data-command="npx remotion render" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -180,6 +191,9 @@
       <p>Subtitles with word-level timestamps and speaker diarization, fast batched inference. BSD-2-Clause.</p>
       <p>With an agent: <a href="https://github.com/abubakarsiddik31/whisperx-transcribe">whisperx-transcribe</a>, runs WhisperX and returns a speaker-labeled Markdown transcript.</p>
       <div class="command-row"><code>npx skills add abubakarsiddik31/whisperx-transcribe</code><button class="copy-command" type="button" data-command="npx skills add abubakarsiddik31/whisperx-transcribe" aria-label="Copy command">Copy</button></div>
+      <p class="meta">WhisperX's own CLI (install from PyPI, then transcribe an audio file with word-level timestamps). Source: m-bain/whisperX README.</p>
+      <div class="command-row"><code>pip install whisperx</code><button class="copy-command" type="button" data-command="pip install whisperx" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>whisperx path/to/audio.wav</code><button class="copy-command" type="button" data-command="whisperx path/to/audio.wav" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag tool">tool</span>
@@ -187,6 +201,8 @@
       <p>Export and conversion for everything: codecs, trimming, muxing audio and subtitles, thumbnails. <a href="https://www.ffmpeg.org">ffmpeg.org</a></p>
       <p>With an agent: <a href="https://github.com/muhammaddadu/ffmpeg-skill">ffmpeg-skill</a>, FFmpeg recipes plus a full production pipeline.</p>
       <div class="command-row"><code>npx skills add muhammaddadu/ffmpeg-skill</code><button class="copy-command" type="button" data-command="npx skills add muhammaddadu/ffmpeg-skill" aria-label="Copy command">Copy</button></div>
+      <p class="meta">FFmpeg's own command line converts and packages media; the simplest documented example converts an AVI to MP4 with default settings. Source: ffmpeg.org documentation examples.</p>
+      <div class="command-row"><code>ffmpeg -i input.avi output.mp4</code><button class="copy-command" type="button" data-command="ffmpeg -i input.avi output.mp4" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -232,7 +248,7 @@
   </ol>
 
   <footer>
-    Every name on this page was checked against its official source on 2026-11-23. Agent skills are public skill packages; "with an agent" links are skills or MCP servers for that tool. License notes appear only where verified. Part of <a href="https://vanipy.com">vanipy.com</a>.
+    Every name on this page was checked against its official source on 2026-11-23. Agent skills are public skill packages; "with an agent" links are skills or MCP servers for that tool. License notes appear only where verified. Terminal commands are copied from each project's official docs or repo on 2026-11-23 and were not run here. Part of <a href="https://vanipy.com">vanipy.com</a>.
     <br>Source of the starting list: <a href="https://x.com/nanajiang8888/status/2124480396020891988">a public post by @nanajiang8888</a> (Nov 22, 2026); repo links verified against that list.
   </footer>
 </main>
