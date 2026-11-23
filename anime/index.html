@@ -85,6 +85,8 @@
       <span class="tag service">service</span>
       <h3><a href="https://pixai.art/">PixAI</a></h3>
       <p>Anime-specialized image generator with its own model library and LoRAs; character design, manga and poster workflows. Free tier.</p>
+      <p class="meta">PixAI API (REST, key issued by request): submit a task, then poll it. Source: platform.pixai.art docs.</p>
+      <div class="command-row"><code>curl -X POST https://api.pixai.art/v2/image/create -H &quot;Authorization: Bearer $PIXAI_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;modelVersionId&quot;:&quot;MODEL_VERSION_ID&quot;,&quot;prompt&quot;:&quot;an anime girl in a sunflower field&quot;,&quot;aspectRatio&quot;:&quot;3:5&quot;}&#x27;</code><button class="copy-command" type="button" data-command="curl -X POST https://api.pixai.art/v2/image/create -H &quot;Authorization: Bearer $PIXAI_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;modelVersionId&quot;:&quot;MODEL_VERSION_ID&quot;,&quot;prompt&quot;:&quot;an anime girl in a sunflower field&quot;,&quot;aspectRatio&quot;:&quot;3:5&quot;}&#x27;" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
@@ -118,31 +120,53 @@
       <span class="tag service">service</span>
       <h3><a href="https://www.vidu.com/">Vidu</a></h3>
       <p>ShengShu's generator and the one that markets anime directly: reference-to-video keeps a character across clips, and the current Q4 model generates sound with the picture. Anime creators feature on its front page.</p>
+      <p class="meta">Vidu MCP server for Claude or Cursor (needs a Vidu API key with purchased API credits; the API host value is in the MCP guide on platform.vidu.com).</p>
+      <div class="command-row"><code>VIDU_API_KEY=your-key VIDU_API_HOST=api-host uvx vidu-mcp</code><button class="copy-command" type="button" data-command="VIDU_API_KEY=your-key VIDU_API_HOST=api-host uvx vidu-mcp" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
       <h3><a href="https://www.klingai.com/">Kling AI</a></h3>
       <p>Kuaishou's generator (VIDEO 3.0 and Omni live, 4.0 announced). Elements register a character from photos or video; Canvas adds an agent mode for scripts and storyboards, and MCP / CLI access lets an agent batch-produce clips.</p>
+      <p class="meta">Official Kling CLI (global accounts; China accounts use a different package). Log in, then run kling who_am_i to see live models. Source: npm @klingai/cli-global.</p>
+      <div class="command-row"><code>npm i -g @klingai/cli-global</code><button class="copy-command" type="button" data-command="npm i -g @klingai/cli-global" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>kling login</code><button class="copy-command" type="button" data-command="kling login" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>kling who_am_i</code><button class="copy-command" type="button" data-command="kling who_am_i" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Official Kling plugin for Claude Code (then authenticate the kling-ai server with /mcp). Source: klingai-tech/claude-plugin.</p>
+      <div class="command-row"><code>claude plugin marketplace add klingai-tech/claude-plugin</code><button class="copy-command" type="button" data-command="claude plugin marketplace add klingai-tech/claude-plugin" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>claude plugin install kling-ai@klingai</code><button class="copy-command" type="button" data-command="claude plugin install kling-ai@klingai" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
       <h3><a href="https://hailuoai.video/">Hailuo AI</a></h3>
       <p>MiniMax's H3 model: up to twelve reference files (images, video, audio), clips up to 15 seconds at up to 2K, native sound.</p>
+      <p class="meta">MiniMax official CLI (needs a MiniMax Token Plan). Source: MiniMax-AI/cli.</p>
+      <div class="command-row"><code>npm install -g mmx-cli</code><button class="copy-command" type="button" data-command="npm install -g mmx-cli" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>mmx auth login</code><button class="copy-command" type="button" data-command="mmx auth login" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>mmx video generate --model MiniMax-H3 --prompt &quot;Ocean waves at sunset&quot; --download clip.mp4</code><button class="copy-command" type="button" data-command="mmx video generate --model MiniMax-H3 --prompt &quot;Ocean waves at sunset&quot; --download clip.mp4" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
       <h3><a href="https://app.pixverse.ai/">PixVerse</a></h3>
       <p>Fast text-and-photo to video (current model V6), aimed at quick social clips; cheap way to test ideas before committing a workflow.</p>
+      <p class="meta">Official PixVerse CLI. Source: PixVerseAI/cli.</p>
+      <div class="command-row"><code>npm install -g pixverse</code><button class="copy-command" type="button" data-command="npm install -g pixverse" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>pixverse auth login</code><button class="copy-command" type="button" data-command="pixverse auth login" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>pixverse create video --prompt &quot;A cat walking on Mars&quot; --model v6 --quality 720p --aspect-ratio 16:9</code><button class="copy-command" type="button" data-command="pixverse create video --prompt &quot;A cat walking on Mars&quot; --model v6 --quality 720p --aspect-ratio 16:9" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
       <h3><a href="https://runwayml.com/">Runway</a></h3>
       <p>General creative suite plus API: generation, editing, performance-driven characters and lip-sync tools in one workspace. Suits people who edit their own film.</p>
+      <p class="meta">Runway API SDKs (create a key in the Runway developer portal and set RUNWAYML_API_SECRET). Source: docs.dev.runwayml.com.</p>
+      <div class="command-row"><code>pip install runwayml</code><button class="copy-command" type="button" data-command="pip install runwayml" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>npm install --save @runwayml/sdk</code><button class="copy-command" type="button" data-command="npm install --save @runwayml/sdk" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
       <h3><a href="https://ltx.studio/">LTX Studio</a></h3>
       <p>Script to scenes, storyboard and timeline, with Elements for recurring characters and locations. Genre-agnostic, useful for planning an anime storyboard even if the final look comes from elsewhere.</p>
+      <p class="meta">The LTX API is a separate developer product from the LTX Studio app (key from the LTX Developer Console). Source: docs.ltx.io quick start.</p>
+      <div class="command-row"><code>curl -X POST https://api.ltx.io/v2/text-to-video -H &quot;Authorization: Bearer YOUR_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;prompt&quot;:&quot;A majestic eagle soaring through clouds at sunset&quot;,&quot;model&quot;:&quot;ltx-2-5-pro&quot;,&quot;duration&quot;:8,&quot;resolution&quot;:&quot;1920x1080&quot;}&#x27;</code><button class="copy-command" type="button" data-command="curl -X POST https://api.ltx.io/v2/text-to-video -H &quot;Authorization: Bearer YOUR_API_KEY&quot; -H &quot;Content-Type: application/json&quot; -d &#x27;{&quot;prompt&quot;:&quot;A majestic eagle soaring through clouds at sunset&quot;,&quot;model&quot;:&quot;ltx-2-5-pro&quot;,&quot;duration&quot;:8,&quot;resolution&quot;:&quot;1920x1080&quot;}&#x27;" aria-label="Copy command">Copy</button></div>
     </div>
     <div class="card">
       <span class="tag service">service</span>
@@ -197,6 +221,11 @@
       <span class="tag service">service</span>
       <h3><a href="https://elevenlabs.io/">ElevenLabs</a></h3>
       <p>Commercial voice generation and dubbing; the hosted option the animate and claude-make-an-anime skills plug into for narration and character voices.</p>
+      <p class="meta">Official ElevenLabs CLI (set ELEVENLABS_API_KEY). Source: elevenlabs/cli.</p>
+      <div class="command-row"><code>npm install -g @elevenlabs/cli</code><button class="copy-command" type="button" data-command="npm install -g @elevenlabs/cli" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>elevenlabs say &quot;this came from the terminal&quot;</code><button class="copy-command" type="button" data-command="elevenlabs say &quot;this came from the terminal&quot;" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Hosted MCP server: add this URL as a custom connector in an MCP client and sign in with OAuth. Source: elevenlabs.io/docs.</p>
+      <div class="command-row"><code>https://api.elevenlabs.io/v1/mcp</code><button class="copy-command" type="button" data-command="https://api.elevenlabs.io/v1/mcp" aria-label="Copy command">Copy</button></div>
     </div>
   </div>
 
@@ -233,7 +262,7 @@
   </ol>
 
   <footer>
-    Every name on this page was checked against its official source on 2026-11-23. License notes appear only where verified. Market context (clip lengths, model versions, free allowances) comes from vendor pages and two dated comparisons: the <a href="https://www.animey.ai/blog/best-ai-anime-generators">Animey comparison</a> (a vendor blog, read with that in mind, facts checked 2026-10-08) and <a href="https://iosur.com/en/posts/chinese-models-tested/">iosur's Chinese-model comparison</a> (updated 2026-10-23). Prices and limits in AI video change monthly; confirm on the official site before subscribing. None of the skills or services are tested by us. Part of <a href="https://vanipy.com">vanipy.com</a>.
+    Every name on this page was checked against its official source on 2026-11-23. License notes appear only where verified. Market context (clip lengths, model versions, free allowances) comes from vendor pages and two dated comparisons: the <a href="https://www.animey.ai/blog/best-ai-anime-generators">Animey comparison</a> (a vendor blog, read with that in mind, facts checked 2026-10-08) and <a href="https://iosur.com/en/posts/chinese-models-tested/">iosur's Chinese-model comparison</a> (updated 2026-10-23). Prices and limits in AI video change monthly; confirm on the official site before subscribing. Terminal and API commands are copied from each vendor's official docs or repo on 2026-11-23 and were not run here: most need an account, API key or paid plan. NovelAI and Animey list no official CLI or MCP, so they have no command. None of the skills or services are tested by us. Part of <a href="https://vanipy.com">vanipy.com</a>.
   </footer>
 </main>
 <script>
