@@ -13,6 +13,9 @@
   h1 { font-size: 1.9rem; margin: 0 0 .35rem; }
   h2 { font-size: 1.25rem; margin: 2.5rem 0 .25rem; border-bottom: 1px solid #2a2e38; padding-bottom: .35rem; }
   p.sub { color: #9aa1ad; margin-top: 0; }
+  .hero { margin: 1.2rem 0 1.8rem; }
+  .hero img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid #2a2e38; }
+  .hero figcaption { color: #9aa1ad; font-size: .82rem; margin-top: .45rem; }
   p.note { color: #9aa1ad; font-size: .9rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .9rem; margin-top: 1rem; }
   .card { background: #171a21; border: 1px solid #2a2e38; border-radius: 10px; padding: 1rem 1.1rem; }
@@ -41,6 +44,7 @@
 <body>
 <main>
   <h1>2D Anime Video with AI</h1>
+  <figure class="hero"><img src="anime-studio-gemini.jpg" alt="An anime artist drawing at a tablet in a cozy, colorful studio filled with art and animation tools"><figcaption>AI-generated illustration made with Gemini.</figcaption></figure>
   <p class="sub">A working toolbox for making anime with AI: agent skills that run the whole production, models for characters and keyframes, clip generators, inbetweening, voices, and the finishing pass. Sibling page: <a href="/skills/motion/">Motion &amp; content creation</a>.</p>
 
   <h2>Agent skills <span class="meta">(public instruction packs an agent loads before a task)</span></h2>
