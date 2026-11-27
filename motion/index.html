@@ -175,6 +175,61 @@
     </div>
   </div>
 
+
+  <h2>Image to video <span class="meta">(turn a still image into a moving clip with AI motion)</span></h2>
+  <p class="note">Free or open-weight options only; hosted generators with free daily quotas (Kling, Luma and similar) are not listed because their terms change too often to keep verified. Each option runs on your own GPU, so a consumer NVIDIA card is the practical entry point; the lighter models note what they run on. Commands are copied from each project's README or docs and were not run here.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag lib">open model</span>
+      <h3><a href="https://github.com/Wan-Video/Wan2.2">Wan 2.2</a></h3>
+      <p>Alibaba's open video models; code and model weights are Apache-2.0 (stated in the repo's License Agreement section). I2V-A14B is the top-quality image-to-video model (MoE, needs a big GPU); TI2V-5B handles text-to-video and image-to-video in one model and runs on a single consumer GPU (README: a 5 s 720p clip in under 9 minutes on a 4090-class card). Official <a href="https://docs.comfy.org/tutorials/video/wan/wan2_2">ComfyUI tutorial</a> available.</p>
+      <p class="meta">Setup and model download. Source: Wan2.2 README.</p>
+      <div class="command-row"><code>git clone https://github.com/Wan-Video/Wan2.2 && cd Wan2.2 && pip install -r requirements.txt</code><button class="copy-command" type="button" data-command="git clone https://github.com/Wan-Video/Wan2.2 &amp;&amp; cd Wan2.2 &amp;&amp; pip install -r requirements.txt" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>huggingface-cli download Wan-AI/Wan2.2-TI2V-5B --local-dir ./Wan2.2-TI2V-5B</code><button class="copy-command" type="button" data-command="huggingface-cli download Wan-AI/Wan2.2-TI2V-5B --local-dir ./Wan2.2-TI2V-5B" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Animate a still (swap in your image and motion description). Source: Wan2.2 README, TI2V-5B single-GPU example.</p>
+      <div class="command-row"><code>python generate.py --task ti2v-5B --size 1280*704 --ckpt_dir ./Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --image input.jpg --prompt "gentle water ripples, leaves swaying, camera still"</code><button class="copy-command" type="button" data-command="python generate.py --task ti2v-5B --size 1280*704 --ckpt_dir ./Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --image input.jpg --prompt &quot;gentle water ripples, leaves swaying, camera still&quot;" aria-label="Copy command">Copy</button></div>
+    </div>
+    <div class="card">
+      <span class="tag lib">open model</span>
+      <h3><a href="https://github.com/Lightricks/LTX-Video">LTX-Video</a></h3>
+      <p>Lightricks' fast video model, tuned for quick iteration (distilled variants generate in a few steps). Supports image-to-video, keyframe conditioning and video extension. Code is Apache-2.0; model weights use Lightricks' own community licenses (older models OpenRail-M), so check <a href="https://ltx.io/model/license">ltx.io/model/license</a> before commercial use. The team recommends its <a href="https://github.com/Lightricks/ComfyUI-LTXVideo">ComfyUI workflows</a> for best quality.</p>
+      <p class="meta">Setup. Source: LTX-Video README.</p>
+      <div class="command-row"><code>git clone https://github.com/Lightricks/LTX-Video && cd LTX-Video && python -m pip install -e .[inference]</code><button class="copy-command" type="button" data-command="git clone https://github.com/Lightricks/LTX-Video &amp;&amp; cd LTX-Video &amp;&amp; python -m pip install -e .[inference]" aria-label="Copy command">Copy</button></div>
+      <p class="meta">Animate a still: replace PROMPT, IMAGE_PATH and the size/frame values. Source: LTX-Video README, image-to-video inference command.</p>
+      <div class="command-row"><code>python inference.py --prompt "PROMPT" --conditioning_media_paths IMAGE_PATH --conditioning_start_frames 0 --height HEIGHT --width WIDTH --num_frames NUM_FRAMES --seed SEED --pipeline_config configs/ltxv-13b-0.9.8-distilled.yaml</code><button class="copy-command" type="button" data-command="python inference.py --prompt &quot;PROMPT&quot; --conditioning_media_paths IMAGE_PATH --conditioning_start_frames 0 --height HEIGHT --width WIDTH --num_frames NUM_FRAMES --seed SEED --pipeline_config configs/ltxv-13b-0.9.8-distilled.yaml" aria-label="Copy command">Copy</button></div>
+    </div>
+    <div class="card">
+      <span class="tag lib">open model</span>
+      <h3><a href="https://github.com/zai-org/CogVideo">CogVideoX</a></h3>
+      <p>Zhipu AI's open video models. Code is Apache-2.0; the CogVideoX-2B weights are Apache-2.0 (per the README), while the 5B models use the CogVideoX license on the model card, so check its terms first. Runs on modest hardware: README says 2B works on a GTX 1080 Ti and 5B on an RTX 3060. The I2V checkpoints (CogVideoX-5b-I2V, CogVideoX1.5-5b-I2V) animate a starting image.</p>
+      <p class="meta">Animate a still through the diffusers demo script. Source: inference/cli_demo.py in the repo.</p>
+      <div class="command-row"><code>python inference/cli_demo.py --prompt "a girl riding a bike" --model_path THUDM/CogVideoX-5b-I2V --generate_type i2v --image_or_video_path input.png</code><button class="copy-command" type="button" data-command="python inference/cli_demo.py --prompt &quot;a girl riding a bike&quot; --model_path THUDM/CogVideoX-5b-I2V --generate_type i2v --image_or_video_path input.png" aria-label="Copy command">Copy</button></div>
+    </div>
+    <div class="card">
+      <span class="tag lib">open model</span>
+      <h3><a href="https://github.com/Stability-AI/generative-models">Stable Video Diffusion</a></h3>
+      <p>Stability AI's first image-to-video model (2023): 14 to 25 frames at 576x1024 from one still, enough for short subtle motion. Licensed under the Stable Video Diffusion Non-Commercial Community License, so no commercial use. Weights: <a href="https://huggingface.co/stabilityai/stable-video-diffusion-img2vid">SVD</a> and <a href="https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt">SVD-XT</a> on Hugging Face.</p>
+      <p class="meta">Setup, then the Streamlit demo for image-to-video. Source: generative-models README.</p>
+      <div class="command-row"><code>git clone https://github.com/Stability-AI/generative-models && cd generative-models</code><button class="copy-command" type="button" data-command="git clone https://github.com/Stability-AI/generative-models &amp;&amp; cd generative-models" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>streamlit run scripts/demo/video_sampling.py</code><button class="copy-command" type="button" data-command="streamlit run scripts/demo/video_sampling.py" aria-label="Copy command">Copy</button></div>
+    </div>
+    <div class="card">
+      <span class="tag lib">open model</span>
+      <h3><a href="https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5">HunyuanVideo 1.5</a></h3>
+      <p>Tencent's open video model (November 2025) with text-to-video and image-to-video at 480p and 720p; its step-distilled 480p I2V generates in 8 to 12 steps on an RTX 4090. Under the Tencent Hunyuan Community License: free below 100 million monthly active users, with other conditions in the license text. The README's default example uses 8 GPUs; single-GPU runs rely on its offloading options.</p>
+      <p class="meta">Animate a still (flags from the README's generation example; it documents 8-GPU parallel inference, see the repo for offloading flags). Source: HunyuanVideo-1.5 README.</p>
+      <div class="command-row"><code>torchrun --nproc_per_node=1 generate.py --prompt "PROMPT" --image_path input.png --resolution 480p --aspect_ratio 16:9 --seed 1 --model_path ./ckpts --output_path ./outputs/output.mp4</code><button class="copy-command" type="button" data-command="torchrun --nproc_per_node=1 generate.py --prompt &quot;PROMPT&quot; --image_path input.png --resolution 480p --aspect_ratio 16:9 --seed 1 --model_path ./ckpts --output_path ./outputs/output.mp4" aria-label="Copy command">Copy</button></div>
+    </div>
+    <div class="card">
+      <span class="tag tool">tool</span>
+      <h3><a href="https://github.com/Comfy-Org/ComfyUI">ComfyUI</a></h3>
+      <p>The node-based runner where all of the models above have official workflows: load an image, wire it to the model, queue the clip, no code needed. GPL-3.0. Official workflows: <a href="https://docs.comfy.org/tutorials/video/wan/wan2_2">Wan 2.2</a>, <a href="https://github.com/Lightricks/ComfyUI-LTXVideo">LTX-Video</a>. <a href="https://docs.comfy.org">docs.comfy.org</a></p>
+      <p class="meta">Install through the official CLI (asks which GPU you have, installs the matching PyTorch). Source: docs.comfy.org comfy-cli getting started.</p>
+      <div class="command-row"><code>pip install comfy-cli</code><button class="copy-command" type="button" data-command="pip install comfy-cli" aria-label="Copy command">Copy</button></div>
+      <div class="command-row"><code>comfy install</code><button class="copy-command" type="button" data-command="comfy install" aria-label="Copy command">Copy</button></div>
+    </div>
+  </div>
+
   <h2>Production pipeline</h2>
   <div class="grid">
     <div class="card">
@@ -244,6 +299,7 @@
 
   <h2>How these fit together</h2>
   <ol class="pipeline">
+    <li><b>Animate stills:</b> Wan 2.2, LTX-Video or CogVideoX (via ComfyUI) turn AI-generated images into moving clips.</li>
     <li><b>Principles:</b> motion-design-skill sets timing, easing and intent before any code.</li>
     <li><b>Build:</b> Remotion (with its official skills) for video; Three.js + rapier + postprocessing + quarks for interactive 3D; hairline, anatomy, anatomy-reveal for line art and object explainers; Manim for formulas; Lottie for light vector loops.</li>
     <li><b>Audio:</b> find licensed SFX and music through the Openverse API.</li>
@@ -254,7 +310,7 @@
   </ol>
 
   <footer>
-    Every name on this page was checked against its official source on 2026-11-23 by Instinct (an AI assistant). Agent skills are public skill packages; "with an agent" links are skills or MCP servers for that tool. License notes appear only where verified. Terminal commands are copied from each project's official docs or repo on 2026-11-23 and were not run here. Part of <a href="https://vanipy.com">vanipy.com</a>.
+    Every name on this page was checked against its official source on 2026-11-23 by Instinct (an AI assistant); the Image to video section was added and checked on 2026-11-27 the same way. Agent skills are public skill packages; "with an agent" links are skills or MCP servers for that tool. License notes appear only where verified. Terminal commands are copied from each project's official docs or repo on 2026-11-23 and were not run here. Part of <a href="https://vanipy.com">vanipy.com</a>.
     <br>Source of the starting list: <a href="https://x.com/nanajiang8888/status/2124480396020891988">a public post by @nanajiang8888</a> (Nov 22, 2026); repo links checked against that list by Instinct (an AI assistant).
   </footer>
 </main>
