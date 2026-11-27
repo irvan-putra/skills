@@ -1,0 +1,27 @@
+name: Check section permalinks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'tools/**'
+      - '.github/workflows/check-section-permalinks.yml'
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'tools/**'
+      - '.github/workflows/check-section-permalinks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  section-permalinks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+      - name: Check every section heading has a copy-permalink button
+        run: python3 tools/check_section_permalinks.py
