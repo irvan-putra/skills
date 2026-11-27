@@ -30,6 +30,8 @@
   @media (max-width: 520px) { .card .command-row { flex-direction: column; gap: .35rem; } .copy-command { align-self: flex-end; } }
   .copy-command { flex: 0 0 auto; min-height: 2rem; padding: .15rem .5rem; border: 1px solid #39414d; border-radius: 5px; background: #20242d; color: #d7dbe2; font: inherit; font-size: .75rem; cursor: pointer; }
   .copy-command:hover, .copy-command:focus-visible { border-color: #7db4ff; color: #fff; }
+  h2 .permalink { margin-left: .55rem; padding: 0 .4rem; border: 1px solid transparent; border-radius: 5px; background: none; color: #7d8490; font: inherit; font-size: .9rem; line-height: 1.4; cursor: pointer; vertical-align: middle; }
+  h2 .permalink:hover, h2 .permalink:focus-visible { border-color: #7db4ff; color: #fff; }
   .meta { font-size: .8rem; color: #7d8490; }
   ol.pipeline { color: #c6cbd4; }
   ol.pipeline li { margin: .3rem 0; }
@@ -42,7 +44,7 @@
   <h1>Motion &amp; Content Creation Skills</h1>
   <p class="sub">A working toolbox for making videos and other visual content: installable agent skills, animation and 3D libraries, the production pipeline around them, and loops that review the render.</p>
 
-  <h2>Agent skills <span class="meta">(public instruction packs an agent loads before a task)</span></h2>
+  <h2 id="agent-skills">Agent skills <span class="meta">(public instruction packs an agent loads before a task)</span><button class="permalink" type="button" data-section="agent-skills" aria-label="Copy link to this section" title="Copy link to this section">#</button></h2>
   <div class="grid">
     <div class="card">
       <span class="tag skill">agent skill</span>
@@ -82,7 +84,7 @@
     </div>
   </div>
 
-  <h2>Animation &amp; 3D libraries</h2>
+  <h2 id="animation-3d-libraries">Animation &amp; 3D libraries<button class="permalink" type="button" data-section="animation-3d-libraries" aria-label="Copy link to this section" title="Copy link to this section">#</button></h2>
   <p class="note">"With an agent" lines link a skill (an instruction pack the agent loads) or an MCP server (live tool access) that helps an agent drive that tool. The code line on each card is the project's own documented setup command.</p>
   <div class="grid">
     <div class="card">
@@ -176,7 +178,7 @@
   </div>
 
 
-  <h2>Image to video <span class="meta">(turn a still image into a moving clip with AI motion)</span></h2>
+  <h2 id="image-to-video">Image to video <span class="meta">(turn a still image into a moving clip with AI motion)</span><button class="permalink" type="button" data-section="image-to-video" aria-label="Copy link to this section" title="Copy link to this section">#</button></h2>
   <p class="note">Free or open-weight options only; hosted generators with free daily quotas (Kling, Luma and similar) are not listed because their terms change too often to keep verified. Each option runs on your own GPU, so a consumer NVIDIA card is the practical entry point; the lighter models note what they run on. Commands are copied from each project's README or docs and were not run here.</p>
   <div class="grid">
     <div class="card">
@@ -230,7 +232,7 @@
     </div>
   </div>
 
-  <h2>Production pipeline</h2>
+  <h2 id="production-pipeline">Production pipeline<button class="permalink" type="button" data-section="production-pipeline" aria-label="Copy link to this section" title="Copy link to this section">#</button></h2>
   <div class="grid">
     <div class="card">
       <span class="tag tool">API</span>
@@ -267,7 +269,7 @@
     </div>
   </div>
 
-  <h2>Review &amp; feedback loops <span class="meta">(checking what actually rendered)</span></h2>
+  <h2 id="review-feedback-loops">Review &amp; feedback loops <span class="meta">(checking what actually rendered)</span><button class="permalink" type="button" data-section="review-feedback-loops" aria-label="Copy link to this section" title="Copy link to this section">#</button></h2>
   <p class="note">These capture the render, check it against the brief or your pinned comments, and feed fixes back for another pass. They describe feedback workflows, not proof that they catch every defect or reliably flag unnatural, <a href="https://en.wikipedia.org/wiki/Uncanny_valley">uncanny valley</a> looking output. None are tested here, so human review stays the final gate.</p>
   <div class="grid">
     <div class="card">
@@ -297,7 +299,7 @@
     </div>
   </div>
 
-  <h2>How these fit together</h2>
+  <h2 id="how-these-fit-together">How these fit together<button class="permalink" type="button" data-section="how-these-fit-together" aria-label="Copy link to this section" title="Copy link to this section">#</button></h2>
   <ol class="pipeline">
     <li><b>Animate stills:</b> Wan 2.2, LTX-Video or CogVideoX (via ComfyUI) turn AI-generated images into moving clips.</li>
     <li><b>Principles:</b> motion-design-skill sets timing, easing and intent before any code.</li>
@@ -333,6 +335,20 @@
     const original = button.textContent;
     try {
       await navigator.clipboard.writeText(button.dataset.command);
+      button.textContent = "Copied";
+    } catch {
+      button.textContent = "Copy failed";
+    }
+    window.setTimeout(() => { button.textContent = original; }, 1600);
+  });
+
+  document.addEventListener("click", async (event) => {
+    const button = event.target.closest(".permalink");
+    if (!button) return;
+    const original = button.textContent;
+    const url = location.origin + location.pathname + "#" + button.dataset.section;
+    try {
+      await navigator.clipboard.writeText(url);
       button.textContent = "Copied";
     } catch {
       button.textContent = "Copy failed";
